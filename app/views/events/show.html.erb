@@ -5,7 +5,7 @@
 				<%= @event.name %></br>
 			</h1>
 			
-			<%= @event.event_date.strftime("Event on %m/%d/%Y at %I:%M%p") %></br>
+			<%= @event.event_date.strftime("Event on %m/%d/%Y at %I:%M%p") unless @event.event_date.nil? %></br>
 			Description: <%= @event.description %></br>
 			<%= render 'attend' %></br></br>
 			<%= render :partial => 'events/attendees' %></br>
