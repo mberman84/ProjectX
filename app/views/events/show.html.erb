@@ -1,0 +1,24 @@
+<table class="profile" summary="Profile information">
+	<tr>
+		<td class="main">
+			<h1>
+				<%= @event.name %></br>
+			</h1>
+			
+			<%= @event.event_date %></br>
+			<%= @event.description %></br>
+			<%= render 'attend' %></br></br>
+			
+			<%= render :partial => 'events/attendees' %></br>
+			
+		</td>
+		<td class="sidebar round">
+			<% if @event.owner_id == current_user.id || current_user.admin? %>
+				<%= link_to "Edit Event", edit_event_path(@event.id), :method => :post %></br></br>
+			<% end %>
+			<strong>Name</strong> <%= @event.name %><br />
+			<strong>URL</strong>  <%= link_to event_path(@event), @event %>
+		</td>
+		
+	</tr>
+</table>

@@ -1,0 +1,11 @@
+<h1>All Events</h1>
+
+<%= button_to "Create Event", create_event_path %>
+
+<%= will_paginate %>
+
+<ul class="users">
+	<%= render @events %>
+</ul>
+
+<%= will_paginate %>

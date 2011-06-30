@@ -1,0 +1,13 @@
+<% @user.events.each do |event| %>
+
+    <li><%= link_to event.name, event %>
+	<% if current_user == @user %>
+		| <%= link_to 'Remove', remove_attendee_event_path(:event_id => event.id, :user_id => @user.id), :method => :post %>
+	<% end %>
+	<% if (event.owner_id == current_user.id) || current_user.admin? %>
+		| <%= link_to "Edit Event", edit_event_path(event.id), :method => :post %>
+	<% end %>
+		
+	</li>
+	
+<% end %>

@@ -1,0 +1,10 @@
+class Event < ActiveRecord::Base
+  attr_accessible :name, :description, :event_date, :location
+  
+  has_and_belongs_to_many :users
+  
+  def remove_attendance(user_id)
+    users.delete(User.find(user_id))
+  end
+    
+end
