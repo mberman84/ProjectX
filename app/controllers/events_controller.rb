@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   #before_filter :authenticate, :only => [:index, :edit, :update, :destroy, :show]
+  before_filter :authenticate
   before_filter :admin_user, :only => [:destroy, :edit, :update, :new, :update]
   
   def index
@@ -81,5 +82,8 @@ class EventsController < ApplicationController
     def admin_user
       redirect_to(root_path) unless current_user.admin?
     end
-  
+    
+    def authenticate
+      deny_access unless signed_in?
+    end
 end
