@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
     @title = "Home"
+    @events = Event.all.paginate(:page => params[:page])
   end
 
   def contact

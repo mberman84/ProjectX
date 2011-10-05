@@ -6,4 +6,9 @@
 	<li><%= link_to "Users", users_path %></li>
 	<li><%= link_to "Events", events_path %></li>
 	<li><%= link_to "Profile", current_user %></li>
+	
+	<h3>Upcoming Events</h3>
+	<ul class="users">
+		<%= render @events %>
+	</ul>
 <% end %>
