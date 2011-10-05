@@ -1,6 +1,8 @@
 <h1>All Events</h1>
 
-<%= button_to "Create Event", create_event_path %>
+<% if current_user.admin? %>
+	<%= button_to "Create Event", create_event_path %>
+<% end %>
 
 <%= will_paginate %>
 
