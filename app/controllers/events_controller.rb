@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   #before_filter :authenticate, :only => [:index, :edit, :update, :destroy, :show]
   before_filter :authenticate
-  before_filter :admin_user, :only => [:destroy, :edit, :update, :new, :update]
+  before_filter :admin_user, :only => [:destroy, :update, :update]
   
   def index
     @title = "All events"
@@ -55,7 +55,7 @@ class EventsController < ApplicationController
   
   def edit
     @event = Event.find(params[:id])
-    @title = "Edit user"
+    @title = "Edit event"
   end
   
   def update
