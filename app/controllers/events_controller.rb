@@ -44,6 +44,7 @@ class EventsController < ApplicationController
   
   def create
     @event = Event.new(params[:event])
+    @event.event_date = Chronic.parse(params[:event_date])
     @event.owner_id = current_user.id
     if @event.save
       flash[:success] = "Event created!"
@@ -60,6 +61,7 @@ class EventsController < ApplicationController
   
   def update
     @event = Event.find(params[:id])
+    @event.event_date = Chronic.parse(params[:event_date])
     if @event.update_attributes(params[:event])
       flash[:success] = "Event updated."
       redirect_to @event
