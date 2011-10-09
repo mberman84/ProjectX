@@ -1,18 +1,3 @@
 <li>
-	<%= link_to event.name, event %>
-	<% if current_user.events.include?(event) %>
-		 | <%= link_to 'Decline', remove_attendee_event_path(:id => event.id, :user_id => current_user.id), :method => :post %>
-		
-	<% else %>
-		 | <%= link_to 'Attend', attend_event_path(event.id), :method => :post %>
-	<% end %>
-	
-	<% if current_user.admin? %>
-		| <%= link_to "delete", event, :method => :delete, :confirm => "You sure?",
-								  :title => "Delete #{event.name}" %>
-	<% end %>
-	
-	<% if (event.owner_id == current_user.id) || current_user.admin? %>
-		| <%= link_to "Edit Event", edit_event_path(event.id), :method => :post %>
-	<% end %>
+	<%= link_to event.name, event %><%= event.event_date.strftime(" on %m/%d/%Y at %I:%M%p") unless event.event_date.nil? %>
 </li>
