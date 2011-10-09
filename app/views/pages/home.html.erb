@@ -14,6 +14,8 @@
 	
 	<h3>Upcoming Events</h3>
 	<ul class="users">
-		<% render @events %>
+		<% @upcoming_events.each do |event| %>
+			<%= render :partial => 'events/event', :locals => {:event => event} %>
+		<% end %>
 	</ul>
 <% end %>
