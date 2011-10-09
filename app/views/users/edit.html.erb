@@ -3,8 +3,7 @@
 <%= form_for(@user) do |f| %>
 	<%= render 'fields', :f => f %>
 	<div class="actions">
-		<%= f.label :name %><br />
-		<%= f.text_field :name %><%= f.submit "Update" %>
+		<%= f.submit "Update" %>
 	</div>
 	<div>
 		<%= gravatar_for @user %>
