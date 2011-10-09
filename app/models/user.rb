@@ -12,7 +12,7 @@
 require 'digest'
 class User < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :name, :email, :password, :password_confirmation, :time_zone
   
   has_and_belongs_to_many :events
   
