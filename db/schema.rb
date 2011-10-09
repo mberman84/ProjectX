@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111009024922) do
+ActiveRecord::Schema.define(:version => 20110621032156) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(:version => 20111009024922) do
     t.integer  "owner_id"
     t.datetime "event_date"
     t.text     "location"
-    t.text     "formatted_Date"
   end
 
   create_table "events_users", :id => false, :force => true do |t|
