@@ -3,7 +3,7 @@
 <% if !signed_in? %>
 	<%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
 	<ul class="users">
-		<% @events.each do |event| %>
+		<% @upcoming_events.each do |event| %>
 			<%= render :partial => 'events/eventhome', :locals => {:event => event} %>
 		<% end %>
 	</ul>
