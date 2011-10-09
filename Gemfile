@@ -49,3 +49,4 @@ end
 # end
 
 gem 'chronic'
+gem "rake", "0.8.7"
