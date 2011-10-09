@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-  #before_filter :authenticate, :only => [:index, :edit, :update, :destroy, :show]
   before_filter :authenticate
   before_filter :admin_user, :only => [:destroy, :update, :update]
   
@@ -24,7 +23,6 @@ class EventsController < ApplicationController
       current_user.events << @event
       flash[:success] = "Attending event!"
     end
-    #redirect_to @event
     redirect_to session[:return_to]
   end
   
@@ -33,7 +31,6 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.remove_attendance(params[:user_id])
     flash[:success] = "User removed from event."
-    #redirect_to @event
     redirect_to session[:return_to]
   end
   

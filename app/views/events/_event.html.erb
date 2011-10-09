@@ -8,7 +8,7 @@
 	<% end %>
 	
 	<% if current_user.admin? %>
-		| <%= link_to "delete", event, :method => :delete, :confirm => "You sure?",
+		| <%= link_to "Delete", event, :method => :delete, :confirm => "You sure?",
 								  :title => "Delete #{event.name}" %>
 	<% end %>
 	
