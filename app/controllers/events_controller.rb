@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   
   def index
     @title = "All events"
-    @events = Event.all.paginate(:page => params[:page])
+    @events = Event.order('event_date ASC').all.paginate(:page => params[:page])
   end
   
   def show
