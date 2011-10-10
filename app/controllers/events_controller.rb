@@ -14,6 +14,11 @@ class EventsController < ApplicationController
     @title = @event.name
   end
   
+  def my_events
+    @my_events = current_user.events(:all).order('event_date ASC')
+    @title = "My events"
+  end
+  
   def attend
     session[:return_to] = request.referrer
     @event = Event.find(params[:id])
