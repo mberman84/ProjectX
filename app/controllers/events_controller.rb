@@ -90,7 +90,7 @@ class EventsController < ApplicationController
     
     def admin_or_owner
       @event = Event.find(params[:id])
-      redirect_to(root_path) unless @event.owner_id == current_user.id
+      redirect_to(root_path) unless (@event.owner_id == current_user.id || current_user.admin?)
     end
     
     def authenticate
