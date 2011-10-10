@@ -35,8 +35,11 @@ class EventsController < ApplicationController
   def remove_attendee
     session[:return_to] = request.referrer
     @event = Event.find(params[:id])
-    @event.remove_attendance(params[:user_id])
-    flash[:success] = "User removed from event."
+    if @event.remove_attendance(params[:user_id])
+      flash[:success] = "User removed from event."
+    else
+      flash[:error] = "Could not remove user"
+    end
     redirect_to session[:return_to]
   end
   
