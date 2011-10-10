@@ -48,6 +48,7 @@ class EventsController < ApplicationController
     @event = Event.new(params[:event])
     @event.event_date = Chronic.parse(params[:event_date])
     @event.owner_id = current_user.id
+    current_user.events << @event
     if @event.save
       flash[:success] = "Event created!"
       redirect_to events_path
