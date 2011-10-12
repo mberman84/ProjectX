@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111012035636) do
+ActiveRecord::Schema.define(:version => 20111012050434) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -110,8 +110,6 @@ ActiveRecord::Schema.define(:version => 20111012035636) do
     t.string   "salt"
     t.boolean  "admin",              :default => false
     t.string   "time_zone"
-    t.string   "provider"
-    t.string   "uid"
     t.string   "location"
   end
 
