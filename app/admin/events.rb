@@ -7,10 +7,10 @@ ActiveAdmin.register Event do
     column :owner_id, :sortable => :owner_id do |event|
       event.owner_name
     end
-    column :description
+    column :location
     column "Created Date", :created_at
     column :event_date
-    column :location 
+    column :description
     default_actions
   end
   
