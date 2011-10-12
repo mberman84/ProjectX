@@ -8,5 +8,4 @@ ActiveAdmin.register User do
     column :time_zone
     default_actions
   end
-  
 end
