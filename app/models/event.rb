@@ -6,5 +6,14 @@ class Event < ActiveRecord::Base
   def remove_attendance(user_id)
     users.delete(User.find(user_id))
   end
+  
+  def formatted_date
+    formatted_date = event_date.strftime(" on %m/%d/%Y at %I:%M%p") unless event_date.nil?
+    formatted_date
+  end
+  
+  def is_owner?(user_id)
+    user_id == owner_id
+  end
     
 end

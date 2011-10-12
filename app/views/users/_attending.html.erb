@@ -6,7 +6,7 @@
 														   :user_id => @user.id), 
 														   :method => :post %>
 	<% end %>
-	<% if (event.owner_id == current_user.id) && !current_user.admin? %>
+	<% if event.is_owner?(current_user.id) && !current_user.admin? %>
 		| <%= link_to "Edit Event", edit_event_path(event.id), :method => :post %>
 	<% elsif current_user.admin? %>
 		| <%= link_to "Edit Event", edit_event_path(event.id), :method => :post %>

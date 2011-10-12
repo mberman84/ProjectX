@@ -5,14 +5,14 @@
 				<%= @event.name %></br>
 			</h1>
 			
-			<%= @event.event_date.strftime("Event on %m/%d/%Y at %I:%M%p") unless @event.event_date.nil? %></br>
+			Event <%= @event.formatted_date %></br>
 			Description: <%= @event.description %></br>
 			<%= render 'attend' %></br></br>
 			<%= render :partial => 'events/attendees' %></br>
 			
 		</td>
 		<td class="sidebar round">
-			<% if @event.owner_id == current_user.id || current_user.admin? %>
+			<% if @event.is_owner?(current_user.id) || current_user.admin? %>
 				<%= link_to "Edit Event", edit_event_path(@event.id), :method => :post %></br></br>
 			<% end %>
 			<strong>Name</strong> <%= @event.name %><br />
