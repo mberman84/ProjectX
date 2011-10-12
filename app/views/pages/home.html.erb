@@ -1,6 +1,6 @@
 <h1>Project App Homepage</h1>
 
-<% if !signed_in? %>
+<% if !is_signed_in? %>
 	<%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
 	<ul class="users">
 		<% @upcoming_events.each do |event| %>

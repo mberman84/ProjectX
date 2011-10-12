@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      sign_in @user
+      sign_in_this @user
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
     else
@@ -62,11 +62,11 @@ class UsersController < ApplicationController
   private
   
     def not_signed_in
-      redirect_to(root_path) unless !signed_in?
+      redirect_to(root_path) unless !is_signed_in?
     end
   
     def authenticate
-      deny_access unless signed_in?
+      deny_access unless is_signed_in?
     end
     
     def correct_user

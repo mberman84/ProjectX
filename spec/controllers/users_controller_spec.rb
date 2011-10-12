@@ -16,7 +16,7 @@ describe UsersController do
     describe "for signed-in users" do
       
       before(:each) do
-        @user = test_sign_in(Factory(:user))
+        @user = test_sign_in_this(Factory(:user))
         second = Factory(:user, :email => "another@example.com")
         third = Factory(:user, :email => "another@example.net")
         
@@ -193,7 +193,7 @@ describe UsersController do
     
     before(:each) do
       @user = Factory(:user)
-      test_sign_in(@user)
+      test_sign_in_this(@user)
     end
     
     it "should be successful" do
@@ -218,7 +218,7 @@ describe UsersController do
     
     before(:each) do
       @user = Factory(:user)
-      test_sign_in(@user)
+      test_sign_in_this(@user)
     end
     
     describe "failure" do
@@ -287,7 +287,7 @@ describe UsersController do
       
       before(:each) do
         wrong_user = Factory(:user, :email => "user@example.net")
-        test_sign_in(wrong_user)
+        test_sign_in_this(wrong_user)
       end
       
       it "should require matching users for 'edit'" do
@@ -317,7 +317,7 @@ describe UsersController do
     
     describe "as a non-admin user" do
       it "should protect the page" do
-        test_sign_in(@user)
+        test_sign_in_this(@user)
         delete :destroy, :id => @user
         response.should redirect_to(root_path)
       end
@@ -327,7 +327,7 @@ describe UsersController do
       
       before(:each) do
         @admin = Factory(:user, :email => "admin@example.com", :admin => true)
-        test_sign_in(@admin)
+        test_sign_in_this(@admin)
       end
       
       it "should destroy the user" do

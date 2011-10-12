@@ -39,6 +39,7 @@ module SampleApp
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
     config.time_zone = "Pacific Time (US & Canada)"
+    config.action_mailer.default_url_options = { :host => 'localhost:3000' }
     
     ###spork hack
     if Rails.env.test?

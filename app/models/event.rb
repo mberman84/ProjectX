@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  attr_accessible :name, :description, :event_date, :location, :formatted_Date
+  attr_accessible :name, :description, :event_date, :location
   
   has_and_belongs_to_many :users
   
@@ -15,5 +15,9 @@ class Event < ActiveRecord::Base
   def is_owner?(user_id)
     user_id == owner_id
   end
-    
+  
+  def owner_name
+    owner_name = User.find(owner_id)
+    owner_name.name
+  end
 end

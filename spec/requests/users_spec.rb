@@ -52,7 +52,7 @@ describe "Users" do
     describe "success" do
       it "should sign a user in and out" do
         user = Factory(:user)
-        integration_sign_in(user)
+        integration_sign_in_this(user)
         controller.should be_signed_in
         click_link "Sign out"
         controller.should_not be_signed_in

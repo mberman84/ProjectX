@@ -97,6 +97,6 @@ class EventsController < ApplicationController
     end
     
     def authenticate
-      deny_access unless signed_in?
+      deny_access unless is_signed_in?
     end
 end
