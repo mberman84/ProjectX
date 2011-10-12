@@ -7,12 +7,10 @@
 		 | <%= link_to 'Attend', attend_event_path(event.id), :method => :post %>
 	<% end %>
 	
-	<% if current_user.admin? %>
-		| <%= link_to "Delete", event, :method => :delete, :confirm => "You sure?",
-								  :title => "Delete #{event.name}" %>
-	<% end %>
-	
 	<% if event.is_owner?(current_user.id) || current_user.admin? %>
+		| <%= link_to "Delete", event, :method => :delete, 
+									   :confirm => "You sure?",
+							  		   :title => "Delete #{event.name}" %>
 		| <%= link_to "Edit Event", edit_event_path(event.id), :method => :post %>
 	<% end %>
 </li>
