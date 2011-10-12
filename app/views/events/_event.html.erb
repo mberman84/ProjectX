@@ -1,5 +1,5 @@
 <li>
-	<%= link_to event.name, event %><%= event.formatted_date %>
+	<%= link_to event.name, event %> on <%= event.formatted_date %>
 	<% if current_user.events.include?(event) %>
 		 | <%= link_to 'Decline', remove_attendee_event_path(:id => event.id, :user_id => current_user.id), :method => :post %>
 		

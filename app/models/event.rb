@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
   end
   
   def formatted_date
-    formatted_date = event_date.strftime(" on %m/%d/%Y at %I:%M%p") unless event_date.nil?
+    formatted_date = event_date.strftime("%m/%d/%Y at %I:%M%p") unless event_date.nil?
     formatted_date
   end
   
