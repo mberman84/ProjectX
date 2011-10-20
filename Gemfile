@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 gem 'activeadmin'
+gem 'activerecord-jdbcsqlite3-adapter'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -9,11 +10,15 @@ gem 'activeadmin'
 gem 'sqlite3-ruby', '1.2.5', :require => 'sqlite3'
 gem 'gravatar_image_tag', '0.1.0'
 gem 'will_paginate', '3.0.pre2'
+gem 'meta_search'
+gem 'sass-rails'
 
 group :development do
 	gem 'rspec-rails', '2.0.1'
 	gem 'annotate-models', '1.0.4'
 	gem 'ruby-debug19', :require => 'ruby-debug'
+	gem 'activerecord-jdbcmysql-adapter' 
+  	gem 'activerecord-jdbcsqlite3-adapter'
 end
 
 group :test do 
@@ -50,4 +55,4 @@ end
 # end
 
 gem 'chronic'
-gem "rake", "0.8.7"
+gem 'rake', '0.8.7'

@@ -34,6 +34,13 @@ GEM
       activesupport (= 3.1.0)
       arel (~> 2.2.1)
       tzinfo (~> 0.3.29)
+    activerecord-jdbc-adapter (1.2.0)
+    activerecord-jdbcmysql-adapter (1.2.0)
+      activerecord-jdbc-adapter (~> 1.2.0)
+      jdbc-mysql (~> 5.1.0)
+    activerecord-jdbcsqlite3-adapter (1.2.0)
+      activerecord-jdbc-adapter (~> 1.2.0)
+      jdbc-sqlite3 (~> 3.7.2)
     activeresource (3.1.0)
       activemodel (= 3.1.0)
       activesupport (= 3.1.0)
@@ -73,6 +80,8 @@ GEM
     inherited_resources (1.2.2)
       has_scope (~> 0.5.0)
       responders (~> 0.6.0)
+    jdbc-mysql (5.1.13)
+    jdbc-sqlite3 (3.7.2)
     json (1.6.1)
     kaminari (0.12.4)
       rails (>= 3.0.0)
@@ -145,6 +154,12 @@ GEM
     ruby_core_source (0.1.5)
       archive-tar-minitar (>= 0.5.2)
     sass (3.1.10)
+    sass-rails (3.1.4)
+      actionpack (~> 3.1.0)
+      railties (~> 3.1.0)
+      sass (>= 3.1.4)
+      sprockets (~> 2.0.0)
+      tilt (~> 1.3.2)
     spork (0.8.4)
     sprockets (2.0.2)
       hike (~> 1.2)
@@ -171,6 +186,8 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  activerecord-jdbcmysql-adapter
+  activerecord-jdbcsqlite3-adapter
   annotate-models (= 1.0.4)
   autotest (= 4.3.2)
   autotest-fsevent (= 0.2.4)
@@ -179,11 +196,13 @@ DEPENDENCIES
   chronic
   factory_girl_rails (= 1.0)
   gravatar_image_tag (= 0.1.0)
+  meta_search
   rails (= 3.1.0)
   rake (= 0.8.7)
   rspec (= 2.0.1)
   rspec-rails (= 2.0.1)
   ruby-debug19
+  sass-rails
   spork (= 0.8.4)
   sqlite3-ruby (= 1.2.5)
   webrat (= 0.7.1)
