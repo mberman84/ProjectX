@@ -51,5 +51,6 @@ Spork.prefork do
 end
 
 Spork.each_run do
+  FactoryGirl.reload
   # This code will be run each time you run your specs.
 end
