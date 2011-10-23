@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_filter :authenticate, :only => [:index, :edit, :update, :destroy]
   before_filter :correct_user, :only => [:edit, :update, :show]
-  before_filter :admin_user,   :only => [:destroy, :show]
+  before_filter :admin_user,   :only => [:destroy, :show, :index]
   before_filter :not_signed_in, :only => [:new, :create]
   
   def index
@@ -62,11 +62,11 @@ class UsersController < ApplicationController
   private
   
     def not_signed_in
-      redirect_to(root_path) unless !is_signed_in?
+      redirect_to(root_path) unless !signed_in?
     end
   
     def authenticate
-      deny_access unless is_signed_in?
+      deny_access unless signed_in?
     end
     
     def correct_user

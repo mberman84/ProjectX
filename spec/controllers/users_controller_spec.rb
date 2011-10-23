@@ -13,13 +13,13 @@ describe UsersController do
       end
     end
     
-    describe "for signed-in users" do
+    describe "for signed-in and admin user" do
       
       before(:each) do
         @user = test_sign_in(Factory(:user))
+        @user.toggle!(:admin)
         second = Factory(:user, :email => "another@example.com")
         third = Factory(:user, :email => "another@example.net")
-        
         @users = [@user, second, third]
         30.times do
           @users << Factory(:user, :email => Factory.next(:email))
@@ -54,18 +54,10 @@ describe UsersController do
       end
       
       it "should have delete links for admins" do
-        @user.toggle!(:admin)
         other_user = User.all.second
         get :index
         response.should have_selector('a', :href => user_path(other_user),
                                            :content => "delete")
-      end
-
-      it "should not have delete links for non-admins" do
-        other_user = User.all.second
-        get :index
-        response.should_not have_selector('a', :href => user_path(other_user),
-                                               :content => "delete")
       end
     end
   end
