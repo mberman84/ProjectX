@@ -82,6 +82,12 @@ describe "LayoutLinks" do
         response.should have_selector("form", :method => "post", 
                                               :action => "/create_event")
       end
+      
+      it "should have a show my events button" do
+        visit events_path
+        response.should have_selector("form", :method => "post", 
+                                              :action => "/my_events")
+      end
     end
     
     describe "as admin" do
