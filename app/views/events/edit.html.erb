@@ -1,5 +1,5 @@
 <h1>Edit Event</h1>
-<%= form_for(@event) do |f| %>
+<%= form_for @event, :html => { :multipart => true } do |f| %>
 	<div class="actions">
 		<%= f.label :name %><br />
 		<%= f.text_field :name %><br /><br />
@@ -9,6 +9,7 @@
 		<%= text_field_tag :event_date, @event.event_date.try(:strftime, "%m/%d/%Y at %I:%M%p"), :size=>30 %><br /><br />
 		<%= f.label :location %><br />
 		<%= f.text_field :location %><br /><br />
+		<%= f.file_field :photo %><br /><br />
 		<%= f.submit "Update" %>
 	</div>
 <% end %>

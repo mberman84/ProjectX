@@ -7,7 +7,8 @@
 			Event <%= @event.formatted_date %></br>
 			Description: <%= @event.description %></br>
 			<%= render 'attend' %></br></br>
-			<%= render :partial => 'events/attendees' %></br>		
+			<%= render :partial => 'events/attendees' %></br>
+			<%= image_tag @event.photo.url(:small) unless !@event.photo.nil? %>		
 		</td>
 		<td class="sidebar round">
 			<% if @event.is_owner?(current_user.id) || current_user.admin? %>

@@ -56,6 +56,7 @@ class EventsController < ApplicationController
       flash[:success] = "Event created!"
       redirect_to events_path
     else
+      flash[:failure] = "Not saved correctly."
       redirect_to events_path
     end
   end  
