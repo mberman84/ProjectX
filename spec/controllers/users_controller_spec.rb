@@ -31,10 +31,10 @@ describe UsersController do
         response.should be_success
       end
       
-      #it "should have the right title" do
-      #  get :index
-      #  response.should have_selector("title", :content => "All users")
-      #end
+      it "should have the right title" do
+        get :index
+        response.should have_selector("title", :content => "All users")
+      end
       
       it "should have an element for each user" do
         get :index
@@ -70,10 +70,12 @@ describe UsersController do
     end
   end
 
-  describe "Get 'show'" do
+  describe "Get 'show' for admin user" do
     
     before(:each) do
       @user = Factory(:user)
+      @user.toggle!(:admin)
+      test_sign_in(@user)
     end
     
     it "should be successful" do
