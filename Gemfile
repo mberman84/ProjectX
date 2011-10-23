@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
+gem 'rails', '3.0.1'
 gem 'activeadmin'
 
 # Bundle edge Rails instead:
@@ -11,20 +11,19 @@ gem 'gravatar_image_tag', '0.1.0'
 gem 'will_paginate', '3.0.pre2'
 
 group :development do
-	gem 'rspec-rails', '2.0.1'
-	gem 'annotate-models', '1.0.4'
+	gem "rspec-rails", "~> 2.4"
 	gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
 group :test do 
-	gem 'rspec', '2.0.1'
+	gem "rspec-rails", "~> 2.4"
 	gem 'webrat', '0.7.1'
 	gem 'autotest-fsevent', '0.2.4'
 	gem 'autotest-growl', '0.2.9'
 	gem 'autotest', '4.3.2'
 	gem 'autotest-rails-pure', '4.1.0'
 	gem 'spork', '0.8.4'
-	gem 'factory_girl_rails', '1.0'
+	gem 'factory_girl_rails'
 end
 
 # Use unicorn as the web server
@@ -50,4 +49,4 @@ end
 # end
 
 gem 'chronic'
-gem "rake", "0.8.7"
+gem "rake", "0.9.2"
