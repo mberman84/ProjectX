@@ -6,6 +6,11 @@ Factory.define :user do |user|
   user.password_confirmation "foobar"
 end
 
+Factory.define :event do |event|
+  event.name "Test event"
+  event.description "test event description"
+end
+
 Factory.sequence :email do |n|
   "person-#{n}@example.com"
 end
