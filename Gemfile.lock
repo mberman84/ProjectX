@@ -134,7 +134,7 @@ GEM
     ruby_core_source (0.1.5)
       archive-tar-minitar (>= 0.5.2)
     sass (3.1.10)
-    spork (0.8.4)
+    spork (0.9.0.rc9)
     sqlite3-ruby (1.2.5)
     sys-uname (0.8.6)
     thor (0.14.6)
@@ -166,7 +166,7 @@ DEPENDENCIES
   rake (= 0.9.2)
   rspec-rails (~> 2.4)
   ruby-debug19
-  spork (= 0.8.4)
+  spork (~> 0.9.0.rc)
   sqlite3-ruby (= 1.2.5)
   webrat (= 0.7.1)
   will_paginate (= 3.0.pre2)
