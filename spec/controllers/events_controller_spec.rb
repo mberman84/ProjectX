@@ -43,9 +43,9 @@ describe EventsController do
     describe "for an unauthorized user" do
 
       before(:each) do
-        @user = Factory(:user)
         wrong_user = Factory(:user, :email => Factory.next(:email))
         @event = Factory(:event)
+        @event.users << Factory(:user)
         test_sign_in(wrong_user)
       end
 
@@ -55,19 +55,20 @@ describe EventsController do
       end
     end
     
-    #describe "for an authorized user" do
-    #  
-    #  before(:each) do
-    #    @user = test_sign_in(Factory(:user))
-    #    @event = Factory(:event, :user => @user)
-    #  end
-    #
-    #  it "should destroy the event" do
-    #    lambda do
-    #      delete :destroy, :id => @event
-    #      response.should redirect_to(root_path)
-    #    end.should change(Event, :count).by(-1)
-    #  end
-    #end
+    describe "for an authorized user" do
+      
+      before(:each) do
+        @user = test_sign_in(Factory(:user))
+        @event = Factory(:event)
+        @event.owner_id = @user.id
+      end
+    
+      #it "should destroy the event" do
+      #  lambda do
+      #    delete :destroy, :id => @event
+      #    response.should redirect_to(events_path)
+      #  end.should change(Event, :count).by(-1)
+      #end
+    end
   end
 end  

@@ -9,6 +9,7 @@ end
 Factory.define :event do |event|
   event.name "Test event"
   event.description "test event description"
+  event.owner_id ""
   #event.association :user
 end
 
