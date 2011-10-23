@@ -54,5 +54,20 @@ describe EventsController do
         response.should redirect_to(root_path)
       end
     end
+    
+    #describe "for an authorized user" do
+    #  
+    #  before(:each) do
+    #    @user = test_sign_in(Factory(:user))
+    #    @event = Factory(:event, :user => @user)
+    #  end
+    #
+    #  it "should destroy the event" do
+    #    lambda do
+    #      delete :destroy, :id => @event
+    #      response.should redirect_to(root_path)
+    #    end.should change(Event, :count).by(-1)
+    #  end
+    #end
   end
 end  

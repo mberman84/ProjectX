@@ -9,6 +9,7 @@ end
 Factory.define :event do |event|
   event.name "Test event"
   event.description "test event description"
+  #event.association :user
 end
 
 Factory.sequence :email do |n|
