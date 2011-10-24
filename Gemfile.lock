@@ -87,7 +87,7 @@ GEM
       activerecord (~> 3.0.0)
       activesupport (~> 3.0.0)
       arel (~> 1.0.1)
-    mime-types (1.16)
+    mime-types (1.17.1)
     nokogiri (1.5.0)
     orm_adapter (0.0.5)
     paperclip (2.4.5)
