@@ -8,7 +8,7 @@ class Event < ActiveRecord::Base
   
   has_and_belongs_to_many :users
   
-  has_attached_file :photo, :styles => { :small => "150x150>" },
+  has_attached_file :photo,# :styles => { :small => "150x150>" },
                     :url  => "/assets/events/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/assets/events/:id/:style/:basename.:extension"
 
