@@ -19,7 +19,8 @@ describe EventsController do
     
     before(:each) do
       @attr = { :name => "Test event",
-                :description => "This is a sample description." }
+                :description => "This is a sample description.",
+                :photo => File.new(Rails.root + 'spec/fixtures/images/test_img.jpeg') }
     end
     
     before(:each) do

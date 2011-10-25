@@ -10,6 +10,7 @@ Factory.define :event do |event|
   event.name "Test event"
   event.description "test event description"
   event.owner_id ""
+  event.photo File.new(Rails.root + 'spec/fixtures/images/test_img.jpeg')
   #event.association :user
 end
 
