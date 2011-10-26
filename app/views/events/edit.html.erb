@@ -10,7 +10,7 @@
 		<%= f.label :location %><br />
 		<%= f.text_field :location %><br /><br />
 		<%= f.label :category %><br />
-		<%= select(:event, :category, Event::CATEGORIES) %><br /><br />
+		<%= select(:event, :category, Event::CATEGORIES, {:include_blank => true}) %><br /><br />
 		<%= f.file_field :photo %><br /><br />
 		<%= f.submit "Update" %>
 	</div>
