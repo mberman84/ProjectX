@@ -1,6 +1,5 @@
 class EventsController < ApplicationController
   before_filter :authenticate
-  #before_filter :admin_user, :only => [:destroy, :update]
   before_filter :admin_or_owner, :only => [:destroy, :update, :remove_attendee]
   
   def index
@@ -57,6 +56,7 @@ class EventsController < ApplicationController
       flash[:success] = "Event created!"
       redirect_to events_path
     else
+      flash[:failure] = "Not saved correctly."
       redirect_to events_path
     end
   end  
@@ -69,6 +69,7 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     @event.event_date = Chronic.parse(params[:event_date])
+    @event.category = params[:category]
     if @event.update_attributes(params[:event])
       flash[:success] = "Event updated."
       redirect_to @event

@@ -6,6 +6,15 @@ Factory.define :user do |user|
   user.password_confirmation "foobar"
 end
 
+Factory.define :event do |event|
+  event.name "Test event"
+  event.description "test event description"
+  event.owner_id ""
+  event.category "test_category"
+  event.photo File.new(Rails.root + 'spec/fixtures/images/test_img.jpeg')
+  #event.association :user
+end
+
 Factory.sequence :email do |n|
   "person-#{n}@example.com"
 end

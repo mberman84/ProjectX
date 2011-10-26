@@ -58,7 +58,7 @@ describe "LayoutLinks" do
       click_button
     end
     
-    it "should have a sigout link" do
+    it "should have a signout link" do
       visit root_path
       response.should have_selector("a", :href => signout_path, :content => "Sign out")
     end 
@@ -68,5 +68,40 @@ describe "LayoutLinks" do
       response.should have_selector("a", :href => user_path(@user),
                                          :content => "Profile")
     end 
+    
+    it "should have an events link" do
+      visit root_path
+      response.should have_selector("a", :href => events_path,
+                                         :content => "Events")
+    end
+    
+    describe "on events page" do
+      
+      it "should have a create event button" do
+        visit events_path
+        response.should have_selector("form", :method => "post", 
+                                              :action => "/create_event")
+      end
+      
+      it "should have a show my events button" do
+        visit events_path
+        response.should have_selector("form", :method => "post", 
+                                              :action => "/my_events")
+      end
+    end
+    
+    describe "as admin" do
+      
+      before(:each) do
+        @user.toggle!(:admin)
+        visit root_path
+      end
+      
+      it "should have a users link" do
+        visit root_path
+        response.should have_selector("a", :href => users_path,
+                                           :content => "Users")
+      end
+    end                                     
   end
 end

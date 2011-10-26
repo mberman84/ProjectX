@@ -5,7 +5,10 @@
 	<%= f.label :description %><br />
 	<%= f.text_field :description %><br /><br />
 	<%= f.label :event_date %><br />
-	<%= text_field_tag :event_date, "", :size=>30 %><br /><br />
+	<%= text_field_tag :event_date, "", :size => 30 %><br /><br />
 	<%= f.label :location %><br />
-	<%= f.text_field :location %>
+	<%= f.text_field :location %><br /><br />
+	<%= f.label :category %><br />
+	<%= select(:event, :category, Event::CATEGORIES, {:include_blank => true}) %><br /><br />
+	<%= f.file_field :photo %>
 </div>

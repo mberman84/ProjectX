@@ -1,14 +1,3 @@
-# == Schema Information
-# Schema version: 20110508195043
-#
-# Table name: users
-#
-#  id         :integer         not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
-#
 require 'digest'
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
