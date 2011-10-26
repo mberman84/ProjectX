@@ -5,6 +5,7 @@
 				<%= @event.name %></br>
 			</h1>
 			Event <%= @event.formatted_date %></br>
+			Category: <%= @event.category %></br>
 			Description: <%= @event.description %></br>
 			<%= render 'attend' %></br></br>
 			<%= render :partial => 'events/attendees' %></br>
