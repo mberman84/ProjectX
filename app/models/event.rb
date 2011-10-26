@@ -3,10 +3,13 @@ class Event < ActiveRecord::Base
                   :description, 
                   :event_date, 
                   :location, 
-                  :owner_id, 
+                  :owner_id,
+                  :category,
                   :photo
   
   has_and_belongs_to_many :users
+  
+  CATEGORIES = ['Music', 'Outdoors', 'Party']
   
   has_attached_file :photo, :styles => { :thumb => "70x70>",
                                          :small => "150x150>",
@@ -26,6 +29,8 @@ class Event < ActiveRecord::Base
                    
   validates :description, :presence => true,
                           :length => { :maximum => 50 }
+                          
+  validates :category, :presence => true
   
   def remove_attendance(user_id)
     users.delete(User.find(user_id))

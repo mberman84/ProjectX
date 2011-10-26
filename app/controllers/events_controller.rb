@@ -69,6 +69,7 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
     @event.event_date = Chronic.parse(params[:event_date])
+    @event.category = params[:category]
     if @event.update_attributes(params[:event])
       flash[:success] = "Event updated."
       redirect_to @event
