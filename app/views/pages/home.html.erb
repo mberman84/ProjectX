@@ -1,4 +1,4 @@
-<h1>EventsApp Homepage</h1>
+<h1>Events Homepage</h1>
 
 <% if !signed_in? %>
 	<%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
@@ -8,9 +8,7 @@
 		<% end %>
 	</ul>
 <% else %>
-	<% if current_user.admin? %>
-		<li><%= link_to "Users", users_path %></li>
-	<% end %>
+	<li><%= link_to "Users", users_path %></li>
 	<li><%= link_to "Events", events_path %></li>
 	<li><%= link_to "Profile", current_user %></li>
 	

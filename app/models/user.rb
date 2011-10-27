@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
   before_save :encrypt_password
   
   def feed
-    Micropost.from_users_followed_by(self)
+    Event.from_users_followed_by(self)
   end
   
   def following?(followed)

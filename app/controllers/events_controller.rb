@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
   before_filter :authenticate
-  before_filter :admin_or_owner, :only => [:destroy, :update, :remove_attendee]
+  before_filter :admin_or_owner, :only => [:destroy, 
+                                           :update, 
+                                           :remove_attendee]
   
   def index
     @title = "All events"
