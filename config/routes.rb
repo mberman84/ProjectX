@@ -4,8 +4,9 @@ SampleApp::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
-
-  resources :users
+  
+  resources :sessions, :only => [:new, :create, :destroy]
+  resources :relationships, :only => [:create, :destroy]
   resources :events do
     member do
       post :attend
@@ -13,8 +14,11 @@ SampleApp::Application.routes.draw do
       post "/edit" => "events#edit"
     end
   end
-  
-  resources :sessions, :only => [:new, :create, :destroy]
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   
   match '/signup', :to => 'users#new'
   match '/create_event', :to => 'events#new'
