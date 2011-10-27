@@ -7,9 +7,9 @@ class Event < ActiveRecord::Base
                   :category,
                   :photo
   
-  has_and_belongs_to_many :users
-  
   CATEGORIES = ['Music', 'Outdoors', 'Party']
+  
+  has_and_belongs_to_many :users
   
   has_attached_file :photo, :styles => { :thumb => "70x70>",
                                          :small => "150x150>",
@@ -18,6 +18,8 @@ class Event < ActiveRecord::Base
                     :url  => "/assets/events/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/assets/events/:id/:style/:basename.:extension"
 
+  scope :from_users_followed_by, lambda { |user| followed_by(user) }
+  
   validates_attachment_presence :photo
   validates_attachment_size :photo, :less_than => 5.megabytes
   validates_attachment_content_type :photo, :content_type => ['image/jpeg', 
@@ -31,6 +33,8 @@ class Event < ActiveRecord::Base
                           :length => { :maximum => 50 }
                           
   validates :category, :presence => true
+  
+  default_scope :order => 'events.event_date DESC'
   
   def remove_attendance(user_id)
     users.delete(User.find(user_id))
@@ -49,4 +53,13 @@ class Event < ActiveRecord::Base
     owner_name = User.find(owner_id)
     owner_name.name
   end
+  
+  private
+  
+    def self.followed_by(user)
+      following_ids = %(SELECT followed_id FROM relationships
+                        WHERE follower_id = :user_id)
+      where("user_id IN (#{following_ids}) OR user_id = :user_id",
+            :user_id => user)
+    end
 end
