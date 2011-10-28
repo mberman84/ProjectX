@@ -14,10 +14,17 @@
 	
 	<h3>Upcoming Events</h3>
 	<ul class="users">
-		
-		<% @upcoming_events.each do |event| %>
-			<%= render :partial => 'events/event', :locals => {:event => event} %>
+		<% @event_feed.each do |event| %>
+		<li><%= link_to event.name, event %> | <%= event.formatted_date %> |
+			<% event.users.each do |user| %>
+				<% if current_user == user %>
+					You
+				<% end %>
+				<% if current_user.following?(user) %>
+					<%= link_to user.name, user %>
+				<% end %>
+			<% end %>	
+			</li>
 		<% end %>
-	</ul>
-	
+	</ul>	
 <% end %>
