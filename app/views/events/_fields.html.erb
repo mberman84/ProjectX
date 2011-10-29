@@ -8,6 +8,8 @@
 	<%= text_field_tag :event_date, "", :size => 30 %><br /><br />
 	<%= f.label :location %><br />
 	<%= f.text_field :location %><br /><br />
+	<%= f.label :cost %><br />
+	<%= f.text_field :cost %><br /><br />
 	<%= f.label :category %><br />
 	<%= select(:event, :category, Event::CATEGORIES, {:include_blank => true}) %><br /><br />
 	<%= f.file_field :photo %>

@@ -5,6 +5,7 @@ class Event < ActiveRecord::Base
                   :location, 
                   :owner_id,
                   :category,
+                  :cost,
                   :photo
   
   CATEGORIES = ['Music', 'Outdoors', 'Party']
