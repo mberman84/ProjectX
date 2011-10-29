@@ -2,8 +2,7 @@
 <% if !signed_in? %>
 	<%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
 <% else %>
-	<h3>Upcoming Events</h3>
 	<ul class="users">
-		<%= render 'event_feed' %>
+		<%= render 'parsed_event_feed' %>
 	</ul>	
 <% end %>
