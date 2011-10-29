@@ -1,0 +1,3 @@
+<% @user.following.each do |followed| %>
+	<li><%= link_to followed.name, followed %></li>
+<% end %>
