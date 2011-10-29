@@ -36,10 +36,6 @@ class User < ActiveRecord::Base
                        
   before_save :encrypt_password
   
-  def feed
-    Event.from_users_followed_by(self)
-  end
-  
   def event_feed
     ids = self.following.collect(&:id) << self.id
     Event.includes(:users).where(["`users`.id IN (#{ids.join(',')})"])

@@ -17,8 +17,6 @@ class Event < ActiveRecord::Base
                                          :large => "600x600>"},
                     :url  => "/assets/events/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/assets/events/:id/:style/:basename.:extension"
-
-  scope :from_users_followed_by, lambda { |user| followed_by(user) }
   
   validates_attachment_presence :photo
   validates_attachment_size :photo, :less_than => 5.megabytes
@@ -53,13 +51,4 @@ class Event < ActiveRecord::Base
     owner_name = User.find(owner_id)
     owner_name.name
   end
-  
-  private
-  
-    def self.followed_by(user)
-      #following_ids = %(SELECT followed_id FROM relationships
-      #                  WHERE follower_id = :user_id)
-      #where("user_id IN (#{following_ids}) OR user_id = :user_id",
-      #      :user_id => user)
-    end
 end
