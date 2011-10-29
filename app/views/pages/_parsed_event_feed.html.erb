@@ -1,29 +1,29 @@
 <h4>Upcoming Events:</h4>
-<ul><% @upcoming_events.each do |event| %>
-<li><%= link_to event.name, event %> | <%= event.formatted_date %> |
+<ul>
+<% @upcoming_events.each do |event| %>
+	<li>
+	<%= link_to event.name, event %> | <%= event.formatted_date %> | 
+	<%= event.users.include?(current_user) ? "You, " : nil %>
 	<% event.users.each do |user| %>
-		<% if current_user == user %>
-			You
-		<% end %>
-		<% if current_user.following?(user) %>
-			<%= link_to user.name, user %>
-		<% end %>
-	<% end %></li>
-<% end %></ul>
+		<%= current_user.following?(user) ? (link_to user.name, user) : nil %>
+	<% end %>
+	</li>
+<% end %>
+</ul>
 
 
-<br /><br />
+<br />
 
 
 <h4>Past Events:</h4>
-<ul><% @past_events.each do |event| %>
-<li><%= link_to event.name, event %> | <%= event.formatted_date %> |
+<ul>
+<% @past_events.each do |event| %>
+	<li>
+	<%= link_to event.name, event %> | <%= event.formatted_date %> |
+	<%= event.users.include?(current_user) ? "You, " : nil %>
 	<% event.users.each do |user| %>
-		<% if current_user == user %>
-			You
-		<% end %>
-		<% if current_user.following?(user) %>
-			<%= link_to user.name, user %>
-		<% end %>
-	<% end %></li>
-<% end %></ul>
+		<%= current_user.following?(user) ? (link_to user.name, user) : nil %>
+	<% end %>
+	</li>
+<% end %>
+</ul>
