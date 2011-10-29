@@ -9,9 +9,6 @@
 			<%= render 'attend_logic' %>
 			<%= render 'follow_logic' %>
 		</td>
-		<td class="sidebar round">
-			<strong>Name</strong> <%= @user.name %><br />
-			<strong>URL</strong>  <%= link_to user_path(@user), @user %>
-		</td>
+		<%= render 'sidebar' %>
 	</tr>
 </table>
