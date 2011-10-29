@@ -31,10 +31,6 @@ class EventsController < ApplicationController
       flash[:success] = "Attending event!"
     end
     redirect_to session[:return_to]
-    respond_to do |format|
-      format.html { redirect_to @event }
-      format.js
-    end
   end
   
   def remove_attendee
@@ -46,10 +42,6 @@ class EventsController < ApplicationController
       flash[:error] = "Could not remove user"
     end
     redirect_to session[:return_to]
-    respond_to do |format|
-       format.html { redirect_to @event }
-       format.js
-     end
   end
   
   def new

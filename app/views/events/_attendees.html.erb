@@ -1,11 +1,14 @@
-The attendees of this event are:</br></br>
-<% @attendees.each do |user| %>
-    <li><%= link_to user.name, user %>
-	<% if @event.owner_id == user.id %>
-		(Owner)
+<% if @attendees.blank? %>
+	None attending yet.
+<% else %>
+	The attendees of this event are:</br></br>
+	<% @attendees.each do |user| %>
+    	<li><%= link_to user.name, user %>
+		<% @event.owner_id == user.id ? "(Owner)" : nil %>
+		<% if @event.users.include?(user) && ((user == current_user) || current_user.admin?) %> - 
+			<%= link_to 'Decline', remove_attendee_event_path(:user_id => user.id), 
+															  :method => :post %>
+			<% end %>
+		</li>
 	<% end %>
-	<% if @event.users.include?(user) && ((user == current_user) || current_user.admin?) %> - 
-			<%= link_to 'Decline', remove_attendee_event_path(:user_id => user.id), :method => :post %>
-	<% end %>
-	</li>
 <% end %>

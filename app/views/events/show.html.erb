@@ -1,14 +1,12 @@
 <table class="profile" summary="Profile information">
 	<tr>
 		<td class="main">
-			<h1>
-				<%= @event.name %></br>
-			</h1>
-			Event <%= @event.formatted_date %><br />
+			<h1><%= @event.name %></h1>
+			<%= render 'attend' %><br />
+			Date: <%= @event.formatted_date %><br />
 			Category: <%= @event.category %><br />
 			Cost: <%= @event.cost.nil? ? "Free" : number_to_currency(@event.cost) %><br />
-			Description: <%= @event.description %><br />
-			<%= render 'attend' %><br /><br />
+			Description: <%= @event.description %><br /><br />
 			<%= render :partial => 'events/attendees' %><br />
 			<%= image_tag @event.photo.url(:medium) unless @event.photo.nil? %>		
 		</td>
