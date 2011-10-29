@@ -1,4 +1,4 @@
-#Sass::Plugin.options[:never_update] = true
+Sass::Plugin.options[:never_update] = true
 
 ActiveAdmin.setup do |config|
 
