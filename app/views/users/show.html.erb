@@ -6,27 +6,8 @@
 				<%= @user.name %>
 				<%= render 'follow_form' if signed_in? %>
 			</h1>
-			<% if @user.events.empty? %>
-				Not attending anything.
-			<% else %>
-				<% if current_user.id == @user.id %>
-					You are attending:
-				<% else %>
-					This user is attending:
-				<% end %>
-				<%= render :partial => 'users/attending' %></br>
-			<% end %>
-			<% if @user.following.empty? %>
-				Not following anyone.
-			<% else %>
-				<% if current_user.id == @user.id %>
-					You are following:
-				<% else %>
-					This user is following:
-				<% end %>
-				<%= render :partial => 'following' %></br>
-			<% end %>
-			
+			<%= render 'attend_logic' %>
+			<%= render 'follow_logic' %>
 		</td>
 		<td class="sidebar round">
 			<strong>Name</strong> <%= @user.name %><br />

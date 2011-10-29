@@ -1,0 +1,10 @@
+<% if @user.events.empty? %>
+	Not attending anything.
+<% else %>
+	<% if current_user.id == @user.id %>
+		You are attending:
+	<% else %>
+		This user is attending:
+	<% end %>
+	<%= render :partial => 'users/attending' %></br>
+<% end %>

@@ -1,0 +1,10 @@
+<% if @user.following.empty? %>
+	Not following anyone.
+<% else %>
+	<% if current_user.id == @user.id %>
+		You are following:
+	<% else %>
+		This user is following:
+	<% end %>
+	<%= render :partial => 'following' %></br>
+<% end %>
