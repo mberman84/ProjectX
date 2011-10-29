@@ -9,7 +9,7 @@ class Event < ActiveRecord::Base
   
   CATEGORIES = ['Music', 'Outdoors', 'Party']
   
-  has_and_belongs_to_many :users
+  has_and_belongs_to_many :users, :uniq => true
   
   has_attached_file :photo, :styles => { :thumb => "70x70>",
                                          :small => "150x150>",

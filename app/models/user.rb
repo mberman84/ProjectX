@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
                          :time_zone, 
                          :remember_me
   
-  has_and_belongs_to_many :events
+  has_and_belongs_to_many :events, :uniq => true
   
   has_many :relationships, :dependent => :destroy,
                              :foreign_key => "follower_id"
