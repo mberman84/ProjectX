@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  helper_method :sort_column, :sort_direction
+  
   before_filter :authenticate
   before_filter :admin_or_owner, :only => [:destroy, 
                                            :update, 
@@ -6,10 +8,8 @@ class EventsController < ApplicationController
   
   def index
     @title = "All events"
-   #@events = Event.order('event_date ASC').all
-   #               .paginate(:page => params[:page])
     @events = Event.search(params[:search])
-                   #.order(sort_column + " " + sort_direction)
+                   .order(sort_column + " " + sort_direction)
                    #.paginate(:per_page => 5, :page => params[:page])
   end
   
@@ -93,6 +93,14 @@ class EventsController < ApplicationController
   end
   
   private
+
+    def sort_column
+      Event.column_names.include?(params[:sort]) ? params[:sort] : "event_date"
+    end
+
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
+    end
     
     def admin_user
       redirect_to(root_path) unless current_user.admin?

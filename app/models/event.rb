@@ -33,8 +33,6 @@ class Event < ActiveRecord::Base
                           
   validates :category, :presence => true
   
-  default_scope :order => 'events.event_date DESC'
-  
   def self.search(search)
     if search
       where('name LIKE ?', "%#{search}%")
