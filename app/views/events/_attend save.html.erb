@@ -1,3 +1,0 @@
-<% if !@event.users.include?(current_user) %>
-	<%= button_to 'Attend Event', attend_event_path(@event.id), :method => :post %>
-<% end %>
