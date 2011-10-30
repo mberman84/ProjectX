@@ -3,10 +3,10 @@
 <%= button_to "Create Event", create_event_path %>
 <%= button_to "Show My Events", my_events_path %>
 
-<%= will_paginate %>
-
-<ul class="users">
-	<%= render @events %>
-</ul>
-
-<%= will_paginate %>
+<%= form_tag events_path, :method => 'get', :id => "events_search" do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+  <div id="events"><%= render 'events' %></div>
+<% end %>

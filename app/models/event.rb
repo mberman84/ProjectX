@@ -35,6 +35,14 @@ class Event < ActiveRecord::Base
   
   default_scope :order => 'events.event_date DESC'
   
+  def self.search(search)
+    if search
+      where('name LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
+  
   def remove_attendance(user_id)
     users.delete(User.find(user_id))
   end
