@@ -8,5 +8,13 @@
     <%= text_field_tag :search, params[:search] %>
     <%= submit_tag "Search", :name => nil %>
   </p>
-  <div id="events"><%= render 'events' %></div>
+<table class="pretty">
+<tr>
+  <th><%= sortable "name" %></th>
+  <th><%= sortable "event_date", "Date" %></th>
+  <th><%= "Actions" %>
+</tr>
+	  <div id="events"><%= render 'events' %></div>
+</table>
+
 <% end %>

@@ -1,10 +1,13 @@
-<li>
-	<%= link_to event.name, event %> on <%= event.formatted_date %>
+<tr>
+	<td><%= link_to event.name, event %></td>
+	<td><%= event.formatted_date %></td>
+	<td>
 	<% if current_user.events.include?(event) %>
-		 | <%= link_to 'Decline', remove_attendee_event_path(:id => event.id, :user_id => current_user.id), :method => :post %>
-		
+		 <%= link_to 'Decline', remove_attendee_event_path(:id => event.id, 							
+														   :user_id => current_user.id), 
+														   :method => :post %>	
 	<% else %>
-		 | <%= link_to 'Attend', attend_event_path(event.id), :method => :post %>
+		 <%= link_to 'Attend', attend_event_path(event.id), :method => :post %>
 	<% end %>
 	
 	<% if event.is_owner?(current_user.id) || current_user.admin? %>
@@ -13,4 +16,5 @@
 							  		   :title => "Delete #{event.name}" %>
 		| <%= link_to "Edit Event", edit_event_path(event.id), :method => :post %>
 	<% end %>
-</li>
+	</td>
+</tr>
