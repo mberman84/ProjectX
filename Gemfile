@@ -4,6 +4,7 @@ gem 'rails', '3.0.1'
 gem 'activeadmin'
 gem 'paperclip'
 gem 'jquery-rails'
+gem "gmaps4rails", "~> 1.3.1"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

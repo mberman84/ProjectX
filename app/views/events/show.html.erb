@@ -8,7 +8,11 @@
 			Cost: <%= @event.cost.nil? ? "Free" : number_to_currency(@event.cost) %><br />
 			Description: <%= @event.description %><br /><br />
 			<%= render :partial => 'events/attendees' %><br />
-			<%= image_tag @event.photo.url(:medium) unless @event.photo.nil? %>		
+			<%= image_tag @event.photo.url(:medium) unless @event.photo.nil? %>	
+			<%= gmaps(:markers => {:data => @json, 
+					  :options => {:raw => '{ animation: google.maps.Animation.BOUNCE }' } },
+			          :map_options => { :raw => '{ disableDefaultUI: false, 
+												   scrollwheel: true }' }) %>	
 		</td>
 		<%= render 'sidebar' %>
 	</tr>

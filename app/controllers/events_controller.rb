@@ -18,6 +18,7 @@ class EventsController < ApplicationController
     @attendees = @event.users
     @current_user = current_user
     @title = @event.name
+    @json = Event.all.to_gmaps4rails
   end
   
   def my_events
