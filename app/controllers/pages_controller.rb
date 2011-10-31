@@ -6,7 +6,8 @@ class PagesController < ApplicationController
     if signed_in?
       @event_feed = current_user.event_feed
       @past_events = @event_feed.where("event_date < ?", Time.now)
-                                .limit(10).find(:all, :order => "event_date DESC")
+                                .limit(10)
+                                .find(:all, :order => "event_date DESC")
       @upcoming_events = @event_feed.where("event_date >= ?", Time.now)
                                     .limit(10).find(:all, :order => "event_date")
     end

@@ -6,7 +6,7 @@
 			Date: <%= @event.formatted_date %><br />
 			Category: <%= @event.category %><br />
 			Cost: <%= @event.cost.nil? ? "Free" : number_to_currency(@event.cost) %><br />
-			Location: <%= @event.location %>
+			Location: <%= @event.location %><br />
 			Description: <%= @event.description %><br /><br />
 			<%= render :partial => 'events/attendees' %><br />	
 			<%= gmaps(:markers => {:data => @json, 

@@ -1,6 +1,7 @@
 <tr>
 	<td><%= link_to event.name, event %></td>
-	<td><%= event.formatted_date %></td>
+	<td><%= event.formatted_date_simple %></td>
+	<td><%= (event.cost.nil? || event.cost == 0) ? "Free" : number_to_currency(event.cost) %></td>
 	<td>
 	<% if current_user.events.include?(event) %>
 		 <%= link_to 'Decline', remove_attendee_event_path(:id => event.id, 							
