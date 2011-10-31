@@ -1,4 +1,3 @@
-# By using the symbol ':user', we get Factory Girl to simulate the User model.
 Factory.define :user do |user|
   user.name "Matthew Berman"
   user.email "mberman84@gmail.com"
@@ -11,8 +10,8 @@ Factory.define :event do |event|
   event.description "test event description"
   event.owner_id ""
   event.category "test_category"
+  event.location "123 Geary Street"
   event.photo File.new(Rails.root + 'spec/fixtures/images/test_img.jpeg')
-  #event.association :user
 end
 
 Factory.sequence :email do |n|

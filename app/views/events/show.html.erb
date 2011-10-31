@@ -6,6 +6,7 @@
 			Date: <%= @event.formatted_date %><br />
 			Category: <%= @event.category %><br />
 			Cost: <%= @event.cost.nil? ? "Free" : number_to_currency(@event.cost) %><br />
+			Location: <%= @event.location %>
 			Description: <%= @event.description %><br /><br />
 			<%= render :partial => 'events/attendees' %><br />
 			<%= image_tag @event.photo.url(:medium) unless @event.photo.nil? %>	

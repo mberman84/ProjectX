@@ -21,6 +21,7 @@ describe EventsController do
       @attr = { :name => "Test event",
                 :description => "This is a sample description.",
                 :category => "test_category",
+                :location => "123 Geary Street",
                 :photo => File.new(Rails.root + 'spec/fixtures/images/test_img.jpeg') }
     end
     
