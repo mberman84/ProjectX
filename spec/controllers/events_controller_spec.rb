@@ -65,13 +65,6 @@ describe EventsController do
         @event = Factory(:event)
         @event.owner_id = @user.id
       end
-    
-      #it "should destroy the event" do
-      #  lambda do
-      #    delete :destroy, :id => @event
-      #    response.should redirect_to(events_path)
-      #  end.should change(Event, :count).by(-1)
-      #end
     end
   end
 end  
