@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
   
   def event_feed
     ids = self.following.collect(&:id) << self.id
-    Event.includes(:users).where(["`users`.id IN (#{ids.join(',')})"])
+    Event.includes(:users).where(["users.id IN (#{ids.join(',')})"])
   end
   
   def following?(followed)
