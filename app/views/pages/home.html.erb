@@ -1,8 +1,17 @@
-<h1>Event Feed</h1>
-<% if !signed_in? %>
-	<%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
-<% else %>
-	<ul class="users">
-		<%= render 'parsed_event_feed' %>
-	</ul>	
-<% end %>
+<div id="content" class="clearfix">
+	<div class="widget"></div>
+	<div class="widget">
+		<h3 class="clearfix">
+			<span class="fl">
+				Event Feed
+			</span>
+		</h3>
+		<% if !signed_in? %>
+			<%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
+		<% else %>
+			<ul class="category_grid_view clearfix">
+				<%= render 'parsed_event_feed_upcoming' %>
+			</ul>	
+		<% end %>
+	</div>
+</div>

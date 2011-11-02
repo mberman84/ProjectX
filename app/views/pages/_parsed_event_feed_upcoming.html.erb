@@ -1,0 +1,11 @@
+<% @upcoming_events.each do |event| %>
+	<li class="clearfix">
+		<a class="post_img"><%= image_tag event.photo.url(:small) unless event.photo.nil? %></a>
+		<%= link_to event.name, event %>
+		<%= event.formatted_date %>
+		<%= event.users.include?(current_user) ? "You " : nil %>
+		<% event.users.each do |user| %>
+			<%= current_user.following?(user) ? (link_to user.name, user) : nil %>
+		<% end %>
+	</li>
+<% end %>

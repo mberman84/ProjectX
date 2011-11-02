@@ -15,7 +15,7 @@ class Event < ActiveRecord::Base
   acts_as_gmappable
   
   has_attached_file :photo, :styles => { :thumb => "70x70>",
-                                         :small => "150x150>",
+                                         :small => "158x105>",
                                          :medium => "400x400>",
                                          :large => "600x600>"},
                     :url  => "/assets/events/:id/:style/:basename.:extension",
