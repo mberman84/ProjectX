@@ -1,9 +1,14 @@
+<div id="top_banner_section">
+	<div id="map_canvas" style="width: 940px; heigh:425px; position: relative">
+	<%= gmaps4rails(@json) %>
+	</div>
+</div>
 <div id="content" class="clearfix">
 	<div class="widget"></div>
 	<div class="widget">
 		<h3 class="clearfix">
 			<span class="fl">
-				Event Feed
+				<%= link_to "Upcoming Events", events_path %>
 			</span>
 		</h3>
 		<% if !signed_in? %>

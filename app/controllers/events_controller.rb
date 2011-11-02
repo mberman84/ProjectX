@@ -11,6 +11,8 @@ class EventsController < ApplicationController
     @events = Event.search(params[:search])
                    .order(sort_column + " " + sort_direction)
                    #.paginate(:per_page => 5, :page => params[:page])
+                   
+    @json = Event.all.to_gmaps4rails
   end
   
   def show

@@ -4,6 +4,7 @@ class PagesController < ApplicationController
     @title = "Home"
     #@upcoming_events = Event.where(:event_date => Time.now..Time.now + 1.week).limit(10).find(:all, :order => "event_date")
     if signed_in?
+      @json = Event.all.to_gmaps4rails
       @event_feed = current_user.event_feed
       @past_events = @event_feed.where("event_date < ?", Time.now)
                                 .limit(10)
