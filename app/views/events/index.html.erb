@@ -1,18 +1,26 @@
 <div id="page" class="top_bg_in">
 	<div id="inner_pages" class="clearfix">
 		<h1>Events</h1>
+
 		<div class="breadcrumb clearfix">
 			<div class="breadcrumb_in"></div>
 		</div>
+
+		<div id="content" class="content_index clearfix">
+			<ul class="sort_by">
+				<li class="title"> Events :</li>
+				<li class="current"> <%= link_to "Upcoming", events_path %> </li>
+				<li class> <%= link_to "Other", events_path %> </li>
+			</ul>
+		<%= render 'events' %>
+		</div>
+		
 		<%= button_to "Create Event", create_event_path %>
 		<%= button_to "Show My Events", my_events_path %>
-
-		<%= form_tag events_path, :method => 'get', :id => "events_search" do %>
-		  <p>
-		    <%= text_field_tag :search, params[:search] %>
-		    <%= submit_tag "Search", :name => nil %>
-		  </p>
-		  <div id="events"><%= render 'events' %></div>
+		<%= form_tag events_path, :method => 'get', 
+								  :id => "events_search" do %>
+			<%= text_field_tag :search, params[:search] %>
+			<%= submit_tag "Search", :name => nil %>
 		<% end %>
 	</div>
 </div>
