@@ -9,7 +9,13 @@
 			Location: <%= @event.location %><br />
 			Description: <%= @event.description %><br /><br />
 			<%= render :partial => 'events/attendees' %><br />	
-			<%= gmaps4rails(@json) %>
+			<%= gmaps({
+				map_options: {
+					zoom: 8,
+					auto_zoom: false
+				},
+				markers: { data: @json }
+			}) %>
 			<%= image_tag @event.photo.url(:medium) unless @event.photo.nil? %>	
 		</td>
 		<%= render 'sidebar' %>
