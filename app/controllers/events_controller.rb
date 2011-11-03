@@ -9,6 +9,7 @@ class EventsController < ApplicationController
   def index
     @title = "All events"
     @events = Event.search(params[:search])
+                   .limit(5)
                    .order(sort_column + " " + sort_direction)
                    #.paginate(:per_page => 5, :page => params[:page])
                    
