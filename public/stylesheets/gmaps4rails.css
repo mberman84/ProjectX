@@ -15,10 +15,10 @@
 }
 
 .bing_map {
-   position: absolute;
-   top: 20;
-   left: 10;
-   width: 450px;
-   height: 400px;
-   border:#555555 2px solid;
+  position: absolute;
+  top: 20;
+  left: 10;
+  width: 450px;
+  height: 400px;
+  border:#555555 2px solid;
 }
