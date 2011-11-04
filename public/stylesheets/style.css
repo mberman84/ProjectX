@@ -515,13 +515,13 @@ h5.form_title { font-weight:bold; border-bottom:1px solid #ddd; padding:30px 0 5
 
 /* single post info */
 #sidebar .company_info { background:#ccc; border:1px solid #ccc; border-bottom:none; margin-top:10px;  padding:0px 10px;  background:#fff url(images/default/contact_infobg.png) repeat-x left bottom; }
-#sidebar .company_info p span.i_date { background:url(images/i_calendar.png) no-repeat left top; padding-left:22px; color:#000; }
-#sidebar .company_info p span.i_time { background: url(images/i_clock.png) no-repeat left top; padding-left:22px; color:#000; }
-#sidebar .company_info p span.i_contact { background: url(images/i_phone.png) no-repeat left top; padding-left:22px; color:#000; }
-#sidebar .company_info p span.i_email2, #sidebar .company_info2 p span.i_email2 { background:url(images/i_email2.png) no-repeat left 2px; padding-left:22px; color:#000; }
-#sidebar .company_info p span.i_location { background: url(images/i_location.png) no-repeat left top; padding-left:22px; color:#000; }
-#sidebar .company_info2 p span.i_website, #sidebar .company_info p span.i_website { background: url(images/i_website.png) no-repeat left top; padding-left:22px; color:#000; }
-#sidebar .company_info p span.fav { background: url(images/i_fav.png) no-repeat left top; padding-left:22px; color:#000; }
+#sidebar .company_info p span.i_date { background:url(images/default/i_calendar.png) no-repeat left top; padding-left:22px; color:#000; }
+#sidebar .company_info p span.i_time { background: url(images/default/i_clock.png) no-repeat left top; padding-left:22px; color:#000; }
+#sidebar .company_info p span.i_contact { background: url(images/default/i_phone.png) no-repeat left top; padding-left:22px; color:#000; }
+#sidebar .company_info p span.i_email2, #sidebar .company_info2 p span.i_email2 { background:url(images/default/i_email2.png) no-repeat left 2px; padding-left:22px; color:#000; }
+#sidebar .company_info p span.i_location { background: url(images/default/i_location.png) no-repeat left top; padding-left:22px; color:#000; }
+#sidebar .company_info2 p span.i_website, #sidebar .company_info p span.i_website { background: url(images/default/i_website.png) no-repeat left top; padding-left:22px; color:#000; }
+#sidebar .company_info p span.fav { background: url(images/default/i_fav.png) no-repeat left top; padding-left:22px; color:#000; }
 
 
 

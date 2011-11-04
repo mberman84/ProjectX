@@ -46,10 +46,10 @@ h1,h2,h3,h4,h5,h6 { color:#000; }
 #slider { background:#fff; }
 .top_banner_section_in .nivoSlider a.nivo-imageLink { border:0; }
 .top_banner_section_in .nivo-caption { background:#000; color:#fff; }
-.top_banner_section_in .nivo-prevNav { background:url(../images/arrows.png) no-repeat left top; }
-.top_banner_section_in .nivo-prevNav:hover { background:url(../images/arrows.png) no-repeat left top; }
-.top_banner_section_in .nivo-nextNav { background:url(../images/arrows.png) no-repeat right top; }
-.top_banner_section_in .nivo-nextNav:hover { background:url(../images/arrows.png) no-repeat right top;}
+.top_banner_section_in .nivo-prevNav { background:url(images/default/arrows.png) no-repeat left top; }
+.top_banner_section_in .nivo-prevNav:hover { background:url(images/default/arrows.png) no-repeat left top; }
+.top_banner_section_in .nivo-nextNav { background:url(images/default/arrows.png) no-repeat right top; }
+.top_banner_section_in .nivo-nextNav:hover { background:url(images/default/arrows.png) no-repeat right top;}
 
 .top_banner_section_in .nivo-controlNav a { background:url(images/default/dot_n.png) no-repeat ; border:none; color:#fff; }
 .top_banner_section_in .nivo-controlNav a:hover, .top_banner_section_in .nivo-controlNav a.active { background:url(images/default/dot_h.png) no-repeat; }
@@ -241,9 +241,9 @@ h5.form_title { border-bottom:1px solid #ddd; }
 .main_img { border:1px solid #ccc; background:#fff; }
 .date { color:#858585;  }
 .by { color:#858585; border-bottom:1px solid #e3e3e3; }
-.category { color:#858585; background:url(../images/i_category.png) no-repeat left 0px; }
+.category { color:#858585; background:url(images/default/i_category.png) no-repeat left 0px; }
 
-.tags { color:#858585;  background:url(../images/i_tags.png) no-repeat left 2px; }
+.tags { color:#858585;  background:url(images/default/i_tags.png) no-repeat left 2px; }
 .post_left a { color:#000; }
 .post_left a:hover { color:#00a3d3;}
 
@@ -280,7 +280,7 @@ blockquote a:hover { color:#000; }
 
 
 /*#sidebar ----------------------- */
-#sidebar h3 span.more, #content h3 span.more { background: url(../images/arrow.png) no-repeat right 6px;  }
+#sidebar h3 span.more, #content h3 span.more { background: url(images/default/arrow.png) no-repeat right 6px;  }
 #sidebar h3 span.more a, #content h3 span.more a { color:#00a3d3; }
 #sidebar h3 span.more a:hover, #content h3 span.more a:hover { color:#000; }
 #sidebar h3 { color:#333; border-bottom:1px solid #ddd; }
@@ -329,7 +329,7 @@ blockquote a:hover { color:#000; }
 
 
 /* recent comments */
-#sidebar .recent_comments_section h3  { background: url(../images/i_comment.png) no-repeat left 4px; }
+#sidebar .recent_comments_section h3  { background: url(images/default/i_comment.png) no-repeat left 4px; }
 #sidebar .recent_comments li { background:none;  }
 #sidebar .recent_comments li .avatar { background:none; border:1px solid #ddd; }
 #sidebar .recent_comments li a.comment_excerpt { color:#777; }
@@ -344,16 +344,16 @@ blockquote a:hover { color:#000; }
 
 /* sidebar - we_recommend widget slider */
 
-#sidebar .we_recommend h3  { background:url(../images/i_image.png) no-repeat left 4px; }
+#sidebar .we_recommend h3  { background:url(images/default/i_image.png) no-repeat left 4px; }
 #sidebar .we_recommend_in { box-shadow: 2px 2px 2px #ddd; -moz-box-shadow: 2px 2px 2px #ddd; -webkit-box-shadow: 2px 2px 2px #ddd;
 border:1px solid #e2dfdf; background:#fff; }
 
 .we_recommend_in .nivoSlider a.nivo-imageLink { border:0; }
 .we_recommend_in .nivo-caption { background:#000; color:#fff; }
-.we_recommend_in .nivo-prevNav { background:url(../images/previous.png) no-repeat left top; }
-.we_recommend_in .nivo-prevNav:hover { background:url(../images/previous.png) no-repeat left top; color:#fff;}
-.we_recommend_in .nivo-nextNav { background:url(../images/next.png) no-repeat left top;}
-.we_recommend_in .nivo-nextNav:hover {background:url(../images/next.png) no-repeat left top; }
+.we_recommend_in .nivo-prevNav { background:url(images/default/previous.png) no-repeat left top; }
+.we_recommend_in .nivo-prevNav:hover { background:url(images/default/previous.png) no-repeat left top; color:#fff;}
+.we_recommend_in .nivo-nextNav { background:url(images/default/next.png) no-repeat left top;}
+.we_recommend_in .nivo-nextNav:hover {background:url(images/default/next.png) no-repeat left top; }
 .we_recommend_in .nivo-controlNav a { color:#fff;  }
 .we_recommend_in .nivo-controlNav a { background:url(images/default/dot_n2.png) no-repeat ; border:none; color:#fff; }
 .we_recommend_in .nivo-controlNav a:hover, .we_recommend_in  .nivo-controlNav a.active { background:url(images/default/dot_h2.png) no-repeat; }
@@ -474,7 +474,7 @@ span.comm-reply a { color:#333;  }
 span.comm-reply a:hover{ color:#000; }
 .commpadd input, #respond textarea { border:1px solid #dbdbdb; border-right:1px solid #c9c9c9;  border-bottom :1px solid #c9c9c9;  }
 
-#comments .comment .text-right p a.comment-reply-link { background:#fff url(../images/b_reply.png) repeat-x left bottom; border:1px solid #cdcdcd; color:#666; }
+#comments .comment .text-right p a.comment-reply-link { background:#fff url(images/default/b_reply.png) repeat-x left bottom; border:1px solid #cdcdcd; color:#666; }
 #comments .comment .text-right p a:hover.comment-reply-link  { color:#000; background:#fff; }
 
 
