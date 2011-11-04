@@ -5,6 +5,11 @@
 			<div class="breadcrumb_in">Home » Add Event</div>
 		</div>
 		<div id="content" class="content_inner">
+			<p class="note ">
+				<span class="required">*</span>
+				Indicates mandatory fields
+			<p>
+			<h5 class="form_title spacer_none">Enter Event Details</h5>
 			<%= form_for @event, :html => { :multipart => true } do |f| %>
 				<%= render 'fields', :f => f %>
 				<div class="actions">

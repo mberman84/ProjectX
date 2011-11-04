@@ -1,16 +1,24 @@
 <%= render 'shared/error_messages', :object => f.object %>
-<div class="field">
-	<%= f.label :name %><br />
-	<%= f.text_field :name %><br /><br />
+<div class="form_row clearfix">
+	<label><%= f.label :name %></label>
+	<%= f.text_field :name, 
+					 :id => "proprty_name", 
+					 :class => "textfield error" %>
+</div>
+<div class="form_row clearfix">
+	<label><%= f.label :address %></label>
+	<%= f.text_field :location, 
+					 :id => "proprty_name", 
+					 :class => "textfield error" %>
+</div>
 	<%= f.label :description %><br />
 	<%= f.text_field :description %><br /><br />
 	<%= f.label :event_date %><br />
 	<%= text_field_tag :event_date, "", :size => 30 %><br /><br />
-	<%= f.label :location %><br />
-	<%= f.text_field :location %><br /><br />
+	<%= f.label :address %><br />
+	<%= f.text_field :location %>
 	<%= f.label :cost %><br />
 	<%= f.text_field :cost %><br /><br />
 	<%= f.label :category %><br />
 	<%= select(:event, :category, Event::CATEGORIES, {:include_blank => true}) %><br /><br />
 	<%= f.file_field :photo %>
-</div>
