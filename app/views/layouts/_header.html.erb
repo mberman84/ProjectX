@@ -2,33 +2,7 @@
 	<div id="header_outer">
 		<div id="header" class="clearfix">
 			<div class="header_left"></div>
-			<div class="header_right">
-				<ul>
-					<li class="hometab "><%= link_to "Home", root_path %></li>
-					<% if signed_in? %>
-						<li class="page_item">
-							<%= link_to "Profile", current_user %>
-						</li>
-						<li class="page_item">
-							<%= link_to "Settings", edit_user_path(current_user )%>
-						</li>
-						<li class="page_item">
-							<%= link_to "Sign out", signout_path, :method => :delete %>
-						</li>
-					<% else %>
-						<li class="page_item">
-							<%= link_to "Sign in", signin_path %>
-						</li>
-					<% end %>
-				</ul>
-				<div class="searchform">
-					<%= form_tag events_path, :method => 'get', 
-										      :id => "events_search" do %>
-						<%= text_field_tag :search, params[:search] %>
-						<%= submit_tag "Search", :name => nil %>
-					<% end %>
-				</div>
-			</div>
+			<%= render 'layouts/header_right' %>
 		</div>
 		<div id="categories_strip">
 			<ul>
