@@ -6,13 +6,18 @@ class Event < ActiveRecord::Base
                   :owner_id,
                   :category,
                   :cost,
-                  :photo
+                  :photo,
+                  :latitude,
+                  :longitude
   
   CATEGORIES = ['Music', 'Outdoors', 'Party']
   
   has_and_belongs_to_many :users, :uniq => true
   
-  acts_as_gmappable
+  acts_as_gmappable :process_geocoding => false
+  
+  geocoded_by :location
+  after_validation :geocode, :if => :location_changed?
   
   has_attached_file :photo, :styles => { :thumb => "70x70>",
                                          :small => "150x150>",
