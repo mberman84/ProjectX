@@ -1,7 +1,26 @@
-<td class="sidebar round">
-	<% if @event.is_owner?(current_user.id) || current_user.admin? %>
-		<%= link_to "Edit Event", edit_event_path(@event.id), :method => :post %></br></br>
-	<% end %>
-	<strong>Name</strong> <%= @event.name %><br />
-	<strong>URL</strong>  <%= link_to event_path(@event), @event %>
-</td>
+<div id="sidebar">
+	<div id="map_canvas" style="width: 294px; height: 370px; position: relative">
+		<%#= gmaps({ map_options: {
+						zoom: 8,
+						auto_zoom: false },
+					markers: { data: @json } }) %>
+	</div>
+	
+	<div class="widget recent_comments_section">
+		<h3>Recent Something</h3>
+		<ul class="recent comments">
+			<li class="clearfix">
+				<span class="li8">
+				</span>
+				<a><%= link_to @events.first.name, @events.first %></a><br /></br>
+				<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</span>
+			</li>
+			<li class="clearfix">
+				<span class="li8">
+				</span>
+				<a><%= link_to @events.second.name, @events.second %></a><br /></br>
+				<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</span>
+			</li>
+		</ul>
+	</div>
+</div>

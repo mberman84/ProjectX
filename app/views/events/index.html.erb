@@ -15,37 +15,9 @@
 		<%= render 'events' %>
 		</div>
 		
-		<div id="sidebar">
-			<div id="map_canvas" style="width: 294px; height: 370px; position: relative">
-				<%#= gmaps({ map_options: {
-								zoom: 8,
-								auto_zoom: false },
-							markers: { data: @json } }) %>
-			</div>
-			
-			<div class="widget recent_comments_section">
-				<h3>Recent Something</h3>
-				<ul class="recent comments">
-					<li class="clearfix">
-						<span class="li8">
-						</span>
-						<a><%= link_to @events.first.name, @events.first %></a><br /></br>
-						<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</span>
-					</li>
-					<li class="clearfix">
-						<span class="li8">
-						</span>
-						<a><%= link_to @events.second.name, @events.second %></a><br /></br>
-						<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</span>
-					</li>
-				</ul>
-			</div>
-		</div>
-		
-		
-		
+		<%= render 'sidebar' %>
+
 		<%#= button_to "Create Event", create_event_path %>
 		<%#= button_to "Show My Events", my_events_path %>
-		
 	</div>
 </div>
