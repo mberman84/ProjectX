@@ -1,8 +1,13 @@
-<h1>Create Event</h1>
-
-<%= form_for @event, :html => { :multipart => true } do |f| %>
-	<%= render 'fields', :f => f %>
-	<div class="actions">
-		<%= f.submit "Create" %>
+<div id="wrapper" class="clearfix">
+	<div id="inner_pages" class="clearfix">
+		<h1>Create Event</h1>
+		<div id="content" class="content_inner">
+			<%= form_for @event, :html => { :multipart => true } do |f| %>
+				<%= render 'fields', :f => f %>
+				<div class="actions">
+					<%= f.submit "Create" %>
+				</div>
+			<% end %>
+		</div>
 	</div>
-<% end %>
+</div>
