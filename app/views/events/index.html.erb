@@ -15,6 +15,15 @@
 		<%= render 'events' %>
 		</div>
 		
+		<div id="sidebar">
+			<div id="map_canvas" style="width: 294px; height: 370px; position: relative">
+				<%= gmaps({ map_options: {
+								zoom: 8,
+								auto_zoom: false },
+							markers: { data: @json } }) %>
+			</div>
+		</div>
+		
 		<%= button_to "Create Event", create_event_path %>
 		<%= button_to "Show My Events", my_events_path %>
 		<%= form_tag events_path, :method => 'get', 
