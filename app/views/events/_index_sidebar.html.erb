@@ -1,0 +1,27 @@
+<div id="sidebar">
+	<div id="map_canvas" style="width: 294px; height: 370px; position: relative; margin-bottom: 30px;">
+		<%= gmaps({ map_options: {
+						zoom: 8,
+						auto_zoom: false,
+						id: "map_canvas" },
+					markers: { data: @json } }) %>
+	</div>
+	
+	<div class="widget recent_comments_section">
+		<h3>Recent Something</h3>
+		<ul class="recent comments">
+			<li class="clearfix">
+				<span class="li8">
+				</span>
+				<a><%= link_to @events.first.name, @events.first %></a><br /></br>
+				<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</span>
+			</li>
+			<li class="clearfix">
+				<span class="li8">
+				</span>
+				<a><%= link_to @events.second.name, @events.second %></a><br /></br>
+				<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</span>
+			</li>
+		</ul>
+	</div>
+</div>
