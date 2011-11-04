@@ -11,6 +11,16 @@
 					 :id => "proprty_name", 
 					 :class => "textfield error" %>
 </div>
+<div class="form_row clearfix">
+	<label><%= f.label :event_date %></label>
+	<%= text_field_tag :event_date, "", 
+					   :id => "stdate",
+					   :class => "textfield_m" %>
+	<img src="stylesheets/images/default/cal.gif" onclick="displayCalendar(document.propertyform.stdate, 'yyyy-mm-dd',this)" style="cursor: pointer; margin-left: 5px;">
+</div>
+	
+	
+	
 	<%= f.label :description %><br />
 	<%= f.text_field :description %><br /><br />
 	<%= f.label :event_date %><br />
