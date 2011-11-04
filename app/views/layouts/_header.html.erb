@@ -2,7 +2,15 @@
 	<div id="header_outer">
 		<div id="header" class="clearfix">
 			<div class="header_left"></div>
-			<div class="header_right"></div>
+			<div class="header_right">
+				<div class="searchform">
+					<%= form_tag events_path, :method => 'get', 
+										      :id => "events_search" do %>
+						<%= text_field_tag :search, params[:search] %>
+						<%= submit_tag "Search", :name => nil %>
+					<% end %>
+				</div>
+			</div>
 		</div>
 		<div id="categories_strip">
 			<ul>

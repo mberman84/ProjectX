@@ -17,7 +17,7 @@
 		
 		<div id="sidebar">
 			<div id="map_canvas" style="width: 294px; height: 370px; position: relative">
-				<%= gmaps({ map_options: {
+				<%#= gmaps({ map_options: {
 								zoom: 8,
 								auto_zoom: false },
 							markers: { data: @json } }) %>
@@ -26,10 +26,6 @@
 		
 		<%= button_to "Create Event", create_event_path %>
 		<%= button_to "Show My Events", my_events_path %>
-		<%= form_tag events_path, :method => 'get', 
-								  :id => "events_search" do %>
-			<%= text_field_tag :search, params[:search] %>
-			<%= submit_tag "Search", :name => nil %>
-		<% end %>
+		
 	</div>
 </div>
