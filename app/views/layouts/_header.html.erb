@@ -3,6 +3,24 @@
 		<div id="header" class="clearfix">
 			<div class="header_left"></div>
 			<div class="header_right">
+				<ul>
+					<li class="hometab "><%= link_to "Home", root_path %></li>
+					<% if signed_in? %>
+						<li class="page_item">
+							<%= link_to "Profile", current_user %>
+						</li>
+						<li class="page_item">
+							<%= link_to "Settings", edit_user_path(current_user )%>
+						</li>
+						<li class="page_item">
+							<%= link_to "Sign out", signout_path, :method => :delete %>
+						</li>
+					<% else %>
+						<li class="page_item">
+							<%= link_to "Sign in", signin_path %>
+						</li>
+					<% end %>
+				</ul>
 				<div class="searchform">
 					<%= form_tag events_path, :method => 'get', 
 										      :id => "events_search" do %>
@@ -14,17 +32,19 @@
 		</div>
 		<div id="categories_strip">
 			<ul>
-				<li class="current_page_item home"><%= link_to "Home", root_path %></li>
+				<li class="current_page_item home">
+					<%= link_to "Home", root_path %>
+				</li>
 				<% if signed_in? %>
-					<li class="cat-item cat-item-2"><%= link_to "Users", users_path %></li>
-					<li class="cat-item cat-item-3"><%= link_to "Events", events_path %></li>
-					<li class="cat-item cat-item-4"><%= link_to "Profile", current_user %></li>
-					<li class="cat-item cat-item-5"><%= link_to "Settings", edit_user_path(current_user )%></li>
-				<% end %>
-				<% if signed_in? %>
-					<li class="cat-item cat-item-6"><%= link_to "Sign out", signout_path, :method => :delete %></li>
-				<% else %>
-					<li class="cat-item cat-item-7"><%= link_to "Sign in", signin_path %></li>
+					<li class="cat-item cat-item-2">
+						<%= link_to "Users", users_path %>
+					</li>
+					<li class="cat-item cat-item-3">
+						<%= link_to "Events", events_path %>
+					</li>
+					<li class="cat-item cat-item-4">
+						<%= link_to "Profile", current_user %>
+					</li>
 				<% end %>
 			</ul>
 		</div>
