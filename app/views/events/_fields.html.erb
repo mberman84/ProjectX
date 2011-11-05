@@ -18,15 +18,13 @@
 					   :class => "textfield_m" %>
 	<img src="stylesheets/images/default/cal.gif" onclick="displayCalendar(document.propertyform.stdate, 'yyyy-mm-dd',this)" style="cursor: pointer; margin-left: 5px;">
 </div>
-	
-	
-	
-	<%= f.label :description %><br />
-	<%= f.text_field :description %><br /><br />
-	<%= f.label :event_date %><br />
-	<%= text_field_tag :event_date, "", :size => 30 %><br /><br />
-	<%= f.label :address %><br />
-	<%= f.text_field :location %>
+<div class="form_row clearfix">
+	<label><%= f.label :description %></label>
+	<%= f.text_field :description,
+	 				 :id => "property_name",
+	 				 :class => "textfield error" %>
+</div>
+
 	<%= f.label :cost %><br />
 	<%= f.text_field :cost %><br /><br />
 	<%= f.label :category %><br />
