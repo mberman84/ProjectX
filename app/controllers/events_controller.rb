@@ -1,7 +1,9 @@
 class EventsController < ApplicationController
   helper_method :sort_column, :sort_direction
   
-  before_filter :authenticate
+  before_filter :authenticate, :only => [:my_events,
+                                         :attend,
+                                         :remove_attendee]
   before_filter :admin_or_owner, :only => [:destroy, 
                                            :update, 
                                            :remove_attendee]
