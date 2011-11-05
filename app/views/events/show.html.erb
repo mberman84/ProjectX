@@ -1,17 +1,10 @@
-<table class="profile" summary="Profile information">
-	<tr>
-		<td class="main">
-			<h1><%= @event.name %></h1>
-			<%= render 'attend' %><br />
-			Date: <%= @event.formatted_date %><br />
-			Category: <%= @event.category %><br />
-			Cost: <%= @event.cost.nil? ? "Free" : number_to_currency(@event.cost) %><br />
-			Location: <%= @event.location %><br />
-			Description: <%= @event.description %><br /><br />
-			<%= render :partial => 'events/attendees' %><br />	
-			<%= gmaps4rails(@json) %>
-			<%= image_tag @event.photo.url(:medium) unless @event.photo.nil? %>	
-		</td>
-		<%= render 'sidebar' %>
-	</tr>
-</table>
+<div id="page" class="top_bg_in">
+	<div id="inner_pages" class="clearfix">
+		<h1><%= @event.name %></h1>
+		<div class="breadcrumb clearfix">
+			<div class="breadcrumb_in">Home » Events » <%= @event.name %></div>
+		</div>
+		<%= render 'show_content' %>
+		<%= render 'show_sidebar' %>
+	</div>
+</div>

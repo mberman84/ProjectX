@@ -1,7 +1,9 @@
 class EventsController < ApplicationController
   helper_method :sort_column, :sort_direction
   
-  before_filter :authenticate
+  before_filter :authenticate, :only => [:my_events,
+                                         :attend,
+                                         :remove_attendee]
   before_filter :admin_or_owner, :only => [:destroy, 
                                            :update, 
                                            :remove_attendee]
@@ -9,8 +11,11 @@ class EventsController < ApplicationController
   def index
     @title = "All events"
     @events = Event.search(params[:search])
+                   .limit(5)
                    .order(sort_column + " " + sort_direction)
                    #.paginate(:per_page => 5, :page => params[:page])
+                   
+    @json = Event.all.to_gmaps4rails
   end
   
   def show

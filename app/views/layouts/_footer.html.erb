@@ -1,9 +1,11 @@
-<footer>
-	<nav class="round">
-		<ul>
-			<li><%= link_to "About", about_path %></li>
-			<li><%= link_to "Contact", contact_path %></li>
-		</ul>
-	</nav>
-	<%= yield :scripts %>
-</footer>
+<div id="bottom" class="clearfix">
+	<div id="bottom_in">
+		<div class="first_col">
+			<ul>
+				<li><%= link_to "About", about_path %></li>
+				<li><%= link_to "Contact", contact_path %></li>
+			</ul>
+		</div>
+		<%= yield :scripts %>
+	</div>
+</div>

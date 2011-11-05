@@ -20,7 +20,7 @@ class Event < ActiveRecord::Base
   after_validation :geocode, :if => :location_changed?
   
   has_attached_file :photo, :styles => { :thumb => "70x70>",
-                                         :small => "150x150>",
+                                         :small => "158x105>",
                                          :medium => "400x400>",
                                          :large => "600x600>"},
                     :url  => "/assets/events/:id/:style/:basename.:extension",
@@ -65,7 +65,7 @@ class Event < ActiveRecord::Base
   end
   
   def formatted_date
-     formatted_date = event_date.strftime("%m/%d/%Y at %I:%M%p") unless event_date.nil?
+     formatted_date = event_date.strftime("%m/%d/%Y - %I:%M%p") unless event_date.nil?
      formatted_date
    end
   

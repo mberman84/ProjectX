@@ -1,8 +1,42 @@
-<h1>Event Feed</h1>
-<% if !signed_in? %>
-	<%= link_to "Sign up now!", signup_path, :class => "signup_button round" %>
-<% else %>
-	<ul class="users">
-		<%= render 'parsed_event_feed' %>
-	</ul>	
-<% end %>
+<div id="wrapper" class="clearfix">
+<body class="home blog">
+	<div class="top_banner_section">
+		<div id="top_banner_section_in clearfix">
+			<div id="map_canvas" style="width: 940px; heigh:425px; position: relative">
+				<%= gmaps4rails(@json) %>
+			</div>
+		</div>
+	</div>
+	<div id="content" class="clearfix">
+		<div class="widget"></div>
+		<div class="widget">
+			<h3 class="clearfix">
+				<span class="fl">
+					<%= link_to "Upcoming Events", events_path %>
+				</span>
+				<span class="more">
+					<%= link_to "More...", events_path %>
+				</span>
+			</h3>
+		
+			<ul class="category_grid_view clearfix">
+				<%= render 'parsed_event_feed_upcoming' %>
+			</ul>
+		
+			<h3 class="clearfix">
+				<span class="fl">
+					<%= link_to "Past Events", events_path %>
+				</span>
+				<span class="more">
+					<%= link_to "More...", events_path %>
+				</span>
+			</h3>
+		
+			<ul class="category_grid_view clearfix">
+				<%= render 'parsed_event_feed_past' %>
+			</ul>	
+		</div>
+	</div>
+	<%= render 'sidebar' %>
+</div>
+</div>

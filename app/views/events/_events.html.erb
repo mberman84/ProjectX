@@ -1,12 +1,3 @@
-<%= hidden_field_tag :direction, params[:direction] %>
-<%= hidden_field_tag :sort, params[:sort] %>
-<table class="pretty">
-  <tr>
-    <th><%= sortable "name" %></th>
-    <th><%= sortable "event_date", "Date" %></th>
-	<th><%= sortable "cost" %></th>
-    <th><%= "Actions" %></th>
-  </tr>
-  <%= render @events %>
-</table>
-
+<ul class="category_list_view clearfix">
+	<%= render @events %>
+</ul>

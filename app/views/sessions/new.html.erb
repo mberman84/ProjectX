@@ -1,16 +1,46 @@
-<h1>Sign in</h1>
-<%= form_for(:session, :url => sessions_path) do |f| %>
-	<div class="field">
-		<%= f.label :email %><br />
-		<%= f.text_field :email %>
+<div id="wrapper" class="clearfix">
+	<div id="inner_pages" class="clearfix">
+		<h1>Sign in</h1>
+		<div class="breadcrumb clearfix">
+			<div class="breadcrumb_in">Home » Sign In</div>
+		</div>
+		<div id="content" class="full_page">
+			<div class="login_form_l">
+				<h4>Sign In</h4>
+				<div class="login_content"></div>
+				<div class="login_form_box">
+					<div class="form_row clearfix">
+						<%= form_for(:session, :url => sessions_path) do |f| %>
+							<%= f.label :email %>
+							<%= f.text_field :email,
+							 				 :id => "user_login",
+											 :class => "textfield error" %>
+							<%= f.label :password %>
+							<%= f.password_field :password,
+							 					 :id => "user_pass",
+												 :class => "textfield" %>
+							<%= f.submit "Sign in", :class => "b_signin_n" %>
+						<% end %>
+					</div>
+				</div>				
+			</div>
+			<div class="registration_form_r">
+				<div id="sign_up">
+					<div class="login_content"></div>
+					<div class="registration_form_box">
+						<h4>Sign up now</h4>
+						<div class="form_row clearfix">
+							<%= form_for(@user) do |f| %>
+								<%= render 'signup_fields', :f => f %>
+								<%= f.submit "Register Now", :class => "b_registernow" %>
+							<% end %>
+						</div>
+					</div>
+				</div>					
+			</div>
+		</div>
 	</div>
-	<div class ="field">
-		<%= f.label :password %><br />
-		<%= f.password_field :password %>
-	</div>
-	<div class="actions">
-		<%= f.submit "Sign in" %>
-	</div>
-<% end %>
+</div>
 
-<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+
+

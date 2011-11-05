@@ -1,0 +1,30 @@
+<div id="content" class="content_inner">
+	<div class="single_post">
+		<div id="post" class="posts post_spacer">
+			<div id="galleria">
+				<div class="galleria-container">
+					<div class="galleria-stage">
+						<div class="galleria-images" style="position:relative; top: 0px; left: 0px; width: 100%; height: 100%; ">
+							<div class="galleria-image" style="overflow-x: hidden; overflow-y: hidden; position: absolute; top: 0px; left: 0px; z-index: 0;" > 
+								<%= image_tag @event.photo.url(:large) unless @event.photo.nil? %>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h3>Description</h3>
+			<p><%= @event.description %></p>
+			<div class="register_info">
+				<h3>How to Attend</h3>
+				<p>Special instructions: This is where special instructions would go</p>
+				<p><%= render 'attend' %></p>
+				<p>Cost : <span class="fees"><%= @event.cost.nil? ? "Free" : number_to_currency(@event.cost) %></span></p>
+			</div>
+			<p class="post_bottom clearfix">
+				<span class="category">
+					Category: <%= link_to @event.category, "#" %>
+				</span>
+			</p>
+		</div>
+	</div>
+</div>

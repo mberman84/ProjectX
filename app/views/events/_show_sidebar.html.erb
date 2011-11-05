@@ -1,0 +1,44 @@
+<div id="sidebar">
+	<div class="company_info">
+		<p>
+			<span class="i_time"> Date : </span><%= @event.formatted_date %>
+		</p>
+		<p>
+			<span class="i_location"> Location : </span><%= @event.location %>
+		</p>
+		<p>
+			<span class="i_contact"> Phone : </span>(000) 321 - 1111
+		</p>
+		<p>
+			<span class="i_email2"> <a>Send Inquiry</a> </span>
+		</p>
+	</div>
+	<div class="company_info2">
+		<p>
+			<span class="i_website"><a>Website</a></span>
+		</p>
+		<div class="links">
+			<a class="i_twitter"> Twitter </a>
+			<a class="i_facebook"> Facebook </a>
+		</div>
+	</div>
+	<div class="sidebar_in">
+		<div class="widget">
+			<div class="sidebar_map clearfix">
+				<div id="map_canvas" style="width: 294px; height: 360px; position: relative;">
+					<div id="sidebar">
+						<div id="map_canvas" style="width: 294px; height: 370px; position: relative">
+							<%= gmaps({ map_options: {
+											zoom: 8,
+											auto_zoom: false,
+											id: "map_canvas" },
+										markers: { data: @json } }) %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+

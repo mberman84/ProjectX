@@ -1,0 +1,14 @@
+<% @upcoming_events.each do |event| %>
+	<li class="clearfix">
+		<a class="post_img"><%= image_tag event.photo.url(:small) unless event.photo.nil? %></a>
+		<h3><%= link_to event.name, event %></h3>
+		<%= event.formatted_date %>
+		<p><%= event.description[0..60] %></p>
+		<p class="review clearfix">
+			<%= event.users.count %> attendees
+			<span class="readmore">
+				<%= link_to "read more", event %>
+			</span>
+		</p>
+	</li>
+<% end %>
