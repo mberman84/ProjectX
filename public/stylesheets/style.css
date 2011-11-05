@@ -802,7 +802,7 @@ border:1px solid #e2dfdf; background:#fff;   }
 
 
 /* place listing detail page slideshow -------------------*/
-.galleria-container{position:relative;overflow:hidden; height:570px; margin-bottom:30px; }
+.galleria-container{position:relative;overflow:hidden; height:540px; margin-bottom:-60px; }
 .galleria-thumbnails-container { }
 .galleria-container img{-moz-user-select:none;-webkit-user-select:none;-o-user-select:none;}
 .galleria-stage{position:absolute;top:10px;bottom:80px;left:0px;right:10px;overflow:hidden;}
