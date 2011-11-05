@@ -20,10 +20,20 @@
 		<% end %>
 	</ul>
 	<div class="searchform">
-		<%= form_tag events_path, :method => 'get', 
-							      :id => "events_search" do %>
-			<%= text_field_tag :search, params[:search] %>
-			<%= submit_tag "Search", :name => nil %>
-		<% end %>
+		<span class="searchfor">
+			<%= form_tag events_path, :method => 'get' do %>
+				<%= text_field_tag :search, params[:search],
+								   :value => "Search for",
+				 				   :id => "events_search",
+								   :class => "s"%>
+				<small class="text">events or people</small>
+			<% end %>
+		</span>
+		<%= submit_tag "", :name => nil,
+		 				   :class => "search_btn" %>
+		<span class="near">
+			<input name="sn" id="sn" type="text" class="s" value="Near">
+			<small class="text">Zip code or address </small>
+		</span>
 	</div>
 </div>
