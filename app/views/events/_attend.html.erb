@@ -1,0 +1,10 @@
+<% if !@event.users.include?(current_user) %>
+	<%= button_to 'Attend Event', attend_event_path(@event.id), :method => :post,
+	 															:class => "button" %>
+<% end %>
+
+<% if @event.users.include?(current_user) %>
+	<%= button_to 'Decline Event', remove_attendee_event_path(:user_id => current_user.id), 
+													  		  :method => :post,
+													 		  :class => "button" %>
+<% end %>

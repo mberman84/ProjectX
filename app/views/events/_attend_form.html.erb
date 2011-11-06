@@ -1,0 +1,7 @@
+<div id="attend_form">
+  <% if !@event.is_attending?(current_user) %>
+    <%= render 'attend' %>
+  <% else %>
+    hello
+  <% end %>
+</div>
