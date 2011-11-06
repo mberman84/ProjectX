@@ -1,19 +1,22 @@
-<h1>Edit Event</h1>
-<%= form_for @event, :html => { :multipart => true } do |f| %>
-	<div class="actions">
-		<%= f.label :name %><br />
-		<%= f.text_field :name %><br /><br />
-		<%= f.label :description %><br />
-		<%= f.text_field :description %><br /><br />
-		<%= f.label :event_date %><br />
-		<%= text_field_tag :event_date, @event.event_date.try(:strftime, "%m/%d/%Y at %I:%M%p"), :size=>30 %><br /><br />
-		<%= f.label :location %><br />
-		<%= f.text_field :location %><br /><br />
-		<%= f.label :cost %><br />
-		<%= f.text_field :cost %><br /><br />
-		<%= f.label :category %><br />
-		<%= select(:event, :category, Event::CATEGORIES, {:include_blank => true}) %><br /><br />
-		<%= f.file_field :photo %><br /><br />
-		<%= f.submit "Update" %>
+<div id="wrapper" class="clearfix">
+	<div id="inner_pages" class="clearfix">
+		<h1>Edit Event</h1>
+		<div class="breadcrumb clearfix">
+			<div class="breadcrumb_in">Home » Edit Event</div>
+		</div>
+		<div id="content" class="content_inner">
+			<p class="note ">
+				<span class="required">*</span>
+				Indicates mandatory fields
+			<p>
+			<h5 class="form_title spacer_none">Enter Event Details</h5>
+			<%= form_for @event, :html => { :multipart => true } do |f| %>
+				<%= render 'edit_fields', :f => f %>
+				<%= f.submit "Update Event", :class => "b_review" %>
+			<% end %>
+		</div>
 	</div>
-<% end %>
+</div>
+
+
+
