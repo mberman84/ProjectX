@@ -15,8 +15,16 @@
 			<span class="rating">
 				<%#= image_tag 'default/rating_off.png' %>
 			</span>
+			<% if event.users.include?(current_user) %>
+					<%= link_to 'Decline Event', remove_attendee_event_path(:id => event.id), 
+																			:method => :post %>
+			<% else %>
+					<%= link_to 'Attend Event', attend_event_path(:id => event.id), 
+															  	  :method => :post %>								
+			<% end %>
 			<% if event.owner_id == current_user.id %>
-				<%= link_to "Edit Event", edit_event_path(event.id), :method => :post %>
+					<span class="rating"></span>
+					<%= link_to "Edit Event", edit_event_path(event.id), :method => :post %>
 			<% end %>
 		</div>
 		<p class="address">

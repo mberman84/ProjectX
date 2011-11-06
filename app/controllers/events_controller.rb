@@ -7,8 +7,7 @@ class EventsController < ApplicationController
                                          :remove_attendee]
   before_filter :is_owner, :only => [:destroy, 
                                      :update,
-                                     :edit,
-                                     :remove_attendee]
+                                     :edit]
   
   def index
     @title = "All events"
@@ -63,7 +62,7 @@ class EventsController < ApplicationController
   def remove_attendee
     session[:return_to] = request.referrer
     @event = Event.find(params[:id])
-    if @event.remove_attendance(params[:user_id])
+    if @event.remove_attendance(current_user.id)
       flash[:success] = "User removed from event."
     else
       flash[:error] = "Could not remove user"
