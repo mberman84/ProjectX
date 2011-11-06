@@ -1,0 +1,22 @@
+<%= render 'shared/error_messages', :object => f.object %>
+	<%= f.label :name %>
+	<%= f.text_field :name,
+	 				 :id => "user_email",
+	 				 :class => "textfield error" %>
+
+	<%= f.label :email %>
+	<%= f.text_field :email,
+	 				 :id => "user_email",
+	 				 :class => "textfield error" %>
+
+	<%= f.label :password %>
+	<%= f.password_field :password,
+	 					 :id => "user_pass",
+						 :class => "textfield" %>
+
+	<%= f.label :password_confirmation, "Confirmation" %>
+	<%= f.password_field :password_confirmation,
+	 					 :id => "user_pass",
+						 :class => "textfield" %>
+
+	<%= f.time_zone_select :time_zone, ActiveSupport::TimeZone.us_zones %>
