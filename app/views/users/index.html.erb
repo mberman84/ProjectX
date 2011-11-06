@@ -4,14 +4,14 @@
 		<div class="breadcrumb clearfix">
 			<div class="breadcrumb_in">Home » Users</div>
 		</div>
-		<div id="content" class="content_index clearfix">
+		<div id="content" class="user_content clearfix">
 			<ul class="sort_by">
 				<li class="title"> Users :</li>
 				<li class="current"> <%= link_to "Following", users_path %> </li>
 				<li class> <%= link_to "Friends", users_path %> </li>
 			</ul>
-			<ul class="category_list_view clearfix">
-				<%= render @users %>
+			<ul class="category_user_list_view clearfix">
+				<%= render 'following' %>
 			</ul>
 		</div>
 		

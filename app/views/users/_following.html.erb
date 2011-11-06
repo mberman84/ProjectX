@@ -1,3 +1,12 @@
-<% @user.following.each do |followed| %>
-	<li><%= link_to followed.name, followed %></li>
+<% @current_user.following.limit(10).each do |followed| %>
+	<li id="user" class="clearfix">
+		<a class="user_img">
+			<%= gravatar_for followed %>
+		</a>
+		<div class="content">
+			<h3><%= link_to followed.name, followed %></h3>
+			<div class="content_right">
+			</div>
+		</div>
+	</li>
 <% end %>

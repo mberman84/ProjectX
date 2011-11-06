@@ -113,6 +113,30 @@ a.post_img { box-shadow: 1px 1px 1px #ddd; -moz-box-shadow: 1px 1px 1px #ddd; -w
 
 .sidebar_map { box-shadow: 1px 1px 1px #ddd; -moz-box-shadow: 1px 1px 1px #ddd; -webkit-box-shadow: 1px 1px 1px #ddd; border:1px solid #e2dfdf; background:#fff; }
 
+/* user list view ----------------- */
+#content .category_user_list_view li { background:none; border-bottom:1px solid #e5e5e5;}
+#content .category_user_list_view li h3 a.pcomments, #content .category_user_list_view li a.pcomments { color:#8b8b8b; background:url(images/default/i_comment2.png) no-repeat left 2px;  }
+#content .category_user_list_view li a.addtofav { color:#8b8b8b; background:url(images/default/i_fav.png) no-repeat left 5px;  }
+#content .category_user_list_view li h3 a:hover.pcomments, #content .category_user_list_view li a:hover.pcomments, #content .category_user_list_view li h3 a.pcomments, #content .category_user_list_view li a:hover.addtofav { color:#000;}
+#content .category_user_list_view li .content a.pcomments { border-bottom:1px solid #e5e5e5; }
+#content .category_user_list_view li a.ping { color:#8b8b8b; background:url(images/default/i_ping.png) no-repeat left 2px;  }
+#content .category_user_list_view li a:hover.ping { color:#000;}
+#content .category_user_list_view li .content .rating { border-bottom:1px solid #e5e5e5; }
+
+#content .category_user_list_view li .content a.favt { border-bottom:1px solid #e5e5e5; }
+
+#content .category_user_list_view li p { color:#777; }
+#content .category_user_list_view li p.address { color:#969696; }
+
+a.post_img { box-shadow: 1px 1px 1px #ddd; -moz-box-shadow: 1px 1px 1px #ddd; -webkit-box-shadow: 1px 1px 1px #ddd; border:1px solid #e2dfdf; background:#fff; }
+
+#content .category_user_list_view li span.readmore a { color:#000; float:left; background:url(images/default/i_more.png) no-repeat 65px 5px; }
+#content .category_user_list_view li span.readmore a:hover { color:#00a3d3; }
+#content .category_user_list_view li:last-child { border-bottom:none; }
+
+.sidebar_map { box-shadow: 1px 1px 1px #ddd; -moz-box-shadow: 1px 1px 1px #ddd; -webkit-box-shadow: 1px 1px 1px #ddd; border:1px solid #e2dfdf; background:#fff; }
+
+
 /* Post Pagination */
 .pagination { border-top:3px solid #e5e5e5;   }
 #content .pagination .i_next a { color:#777; background:url(images/default/i_next.png) no-repeat right 8px; }
