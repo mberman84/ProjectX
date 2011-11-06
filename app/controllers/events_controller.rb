@@ -12,14 +12,14 @@ class EventsController < ApplicationController
   def index
     @title = "All events"
     if params[:list_by] == "event_feed"
-      @events = @current_user.event_feed
+      @events = current_user.event_feed
                              .where("event_date >= ?", Time.now)
                              .limit(5)
                              .order(sort_column + " " + sort_direction)
                              .find(:all, :order => "event_date DESC")
       @json = @events.to_gmaps4rails
     elsif params[:list_by] == "owned_events"
-      @events = Event.where(:owner_id => @current_user.id)
+      @events = Event.where(:owner_id => current_user.id)
                      .limit(5)
                      .order(sort_column + " " + sort_direction)
                      .find(:all, :order => "event_date DESC")
@@ -37,7 +37,6 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @attendees = @event.users
-    @current_user = current_user
     @title = @event.name
     @json = Event.find(params[:id]).to_gmaps4rails
   end

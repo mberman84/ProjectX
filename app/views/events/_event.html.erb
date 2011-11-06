@@ -13,12 +13,12 @@
 		<div class="content_right">
 			<%= link_to "#{event.users.count} Attendees", event %>
 			<span class="rating"></span>
-			<% if event.owner_id == current_user.id %>
+			<% if event.owner == current_user %>
 				<%= link_to "Edit Event", edit_event_path(event.id), :method => :post %>
 			<% else %>
 				<% if event.users.include?(current_user) %>
 						<%= link_to 'Decline Event', remove_attendee_event_path(:id => event.id,
-																				:user_id => @current_user.id), 
+																				:user_id => current_user.id), 
 																				:method => :post %>
 				<% else %>
 						<%= link_to 'Attend Event', attend_event_path(:id => event.id), 
@@ -32,7 +32,7 @@
 		<p class="address">
 			<span>You know: </span>
 			<% event.users.each do |attendee| %>
-				<% if @current_user.following?(attendee) %>
+				<% if current_user.try(:following?, attendee) %>
 					<%= attendee.name.capitalize %>
 				<% end %>
 			<% end %>
