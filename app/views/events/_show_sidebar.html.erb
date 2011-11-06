@@ -2,7 +2,7 @@
 	<div class="company_info">
 		<p>
 			<span class="fav"> You are: </span>
-			<% if @event.owner_id == current_user.id %>
+			<% if @event.owner == current_user %>
 				Event Owner
 			<% elsif @event.users.include?(current_user) %>
 				Attending

@@ -18,7 +18,7 @@
 				<h3>How to Attend</h3>
 				<p>Special instructions: This is where special instructions would go</p>
 				<%= render 'attend' %>
-				<% if current_user.id == @event.owner_id %>
+				<% if current_user == @event.owner %>
 					<%= button_to 'Edit Event', edit_event_path(@event.id), :method => :post, :class => "button" %>
 				<% end %>
 				<p>Cost : <span class="fees"><%= @event.cost.nil? ? "Free" : number_to_currency(@event.cost) %></span></p>

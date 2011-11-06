@@ -61,7 +61,7 @@ class EventsController < ApplicationController
   def remove_attendee
     session[:return_to] = request.referrer
     @event = Event.find(params[:id])
-    if ( params[:user_id].to_i == current_user.id ) || ( @event.owner_id == current_user.id )
+    if ( params[:user_id].to_i == current_user.id ) || ( @event.owner == current_user )
       if @event.remove_attendance(params[:user_id])
         flash[:success] = "User removed from event."
       else
@@ -81,7 +81,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(params[:event])
     @event.event_date = Chronic.parse(params[:event_date])
-    @event.owner_id = current_user.id
+    @event.owner = current_user
     current_user.events << @event
     if @event.save
       flash[:success] = "Event created!"
@@ -133,7 +133,7 @@ class EventsController < ApplicationController
     
     def is_owner
       @event = Event.find(params[:id])
-      redirect_to(root_path) unless (@event.owner_id == current_user.id)
+      redirect_to(root_path) unless (@event.owner == current_user)
     end
     
     def authenticate

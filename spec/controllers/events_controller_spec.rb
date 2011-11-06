@@ -63,7 +63,7 @@ describe EventsController do
       before(:each) do
         @user = test_sign_in(Factory(:user))
         @event = Factory(:event)
-        @event.owner_id = @user.id
+        @event.owner = @user
       end
     end
   end
