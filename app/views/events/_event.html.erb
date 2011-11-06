@@ -3,7 +3,7 @@
 		<%= image_tag event.photo.url(:small) unless event.photo.nil? %>
 	</a>
 	<div class="content">
-		<h3><a><%= link_to event.name, event %></a></h3>
+		<h3><%= link_to event.name, event %></h3>
 		<p class="timing">
 			<span>Date: </span><%= event.formatted_date_simple %>
 		</p>
@@ -11,10 +11,13 @@
 			<span>Cost: </span><%= event.cost? ? number_to_currency(event.cost) : "Free" %>
 		</p>
 		<div class="content_right">
-			<a><%= link_to "#{event.users.count} Attendees", event %> </a>
+			<%= link_to "#{event.users.count} Attendees", event %>
 			<span class="rating">
 				<%#= image_tag 'default/rating_off.png' %>
 			</span>
+			<% if event.owner_id == current_user.id %>
+				<%= link_to "Edit Event", edit_event_path(event.id), :method => :post %>
+			<% end %>
 		</div>
 		<p class="address">
 			<span>Location: </span><%= event.location %>
