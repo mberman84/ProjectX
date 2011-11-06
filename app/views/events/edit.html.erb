@@ -1,11 +1,7 @@
 <div id="wrapper" class="clearfix">
 	<div id="inner_pages" class="clearfix">
 		<h1>Edit Event</h1>
-		<div class="breadcrumb clearfix">
-			<div class="breadcrumb_in">
-				Home » Edit Event » <%= @event.name %>
-			</div>
-		</div>
+		<%= render 'edit_breadcrumb' %>
 		<div id="content" class="content_inner">
 			<p class="note ">
 				<span class="required">*</span>
