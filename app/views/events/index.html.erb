@@ -2,7 +2,9 @@
 	<div id="inner_pages" class="clearfix">
 		<h1>Events</h1>
 		<div class="breadcrumb clearfix">
-			<div class="breadcrumb_in">Home » Events</div>
+			<div class="breadcrumb_in">
+				<%= link_to "Home", root_path %> » Events
+			</div>
 		</div>
 		<div id="content" class="content_index clearfix">
 			<% if params[:search].blank? %>
