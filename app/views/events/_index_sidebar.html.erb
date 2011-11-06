@@ -1,8 +1,7 @@
 <div id="sidebar">
 	<div id="map_canvas" style="width: 294px; height: 370px; position: relative; margin-bottom: 30px;">
 		<%= gmaps({ map_options: {
-						zoom: 8,
-						auto_zoom: false,
+						auto_zoom: true,
 						id: "map_canvas" },
 					markers: { data: @json } }) %>
 	</div>

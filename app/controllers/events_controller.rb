@@ -10,21 +10,21 @@ class EventsController < ApplicationController
   
   def index
     @title = "All events"
-    @events = Event.search(params[:search])
-                   .where("event_date >= ?", Time.now)
-                   .limit(5)
-                   .order(sort_column + " " + sort_direction)
-                   .find(:all, :order => "event_date DESC")
-                   #.paginate(:per_page => 5, :page => params[:page])
     if params[:list_by] == "event_feed"
       @events = @current_user.event_feed
                              .where("event_date >= ?", Time.now)
                              .limit(5)
                              .order(sort_column + " " + sort_direction)
                              .find(:all, :order => "event_date DESC")
+      @json = @events.to_gmaps4rails
+    else
+      @events = Event.search(params[:search])
+                     .where("event_date >= ?", Time.now)
+                     .limit(5)
+                     .order(sort_column + " " + sort_direction)
+                     .find(:all, :order => "event_date DESC")
+      @json = @events.to_gmaps4rails
     end
-                   
-    @json = Event.all.to_gmaps4rails
   end
   
   def show
