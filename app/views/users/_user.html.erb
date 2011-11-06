@@ -1,8 +1,13 @@
-<li>
-	<%= gravatar_for user, :size => 30 %>
-	<%= link_to user.name, user %>
-	<% if current_user.admin? %>
-	| <%= link_to "delete", user, :method => :delete, :confirm => "You sure?",
-								  :title => "Delete #{user.name}" %>
-	<% end %>
+<li id="post" class="clearfix">
+	<a class="post_img">
+		<%#= image_tag users.photo.url(:small) unless user.photo.nil? %>
+	</a>
+	<div class="content">
+		<h3><a><%= link_to user.name, user %></a></h3>
+		<div class="content_right">
+			<span class="rating">
+				<%#= image_tag 'default/rating_off.png' %>
+			</span>
+		</div>
+	</div>
 </li>

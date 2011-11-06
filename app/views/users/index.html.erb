@@ -1,9 +1,23 @@
-<h1>All Users</h1>
+<div id="page" class="top_bg_in">
+	<div id="inner_pages" class="clearfix">
+		<h1>Users</h1>
+		<div class="breadcrumb clearfix">
+			<div class="breadcrumb_in">Home » Users</div>
+		</div>
+		<div id="content" class="content_index clearfix">
+			<ul class="sort_by">
+				<li class="title"> Users :</li>
+				<li class="current"> <%= link_to "Following", users_path %> </li>
+				<li class> <%= link_to "Friends", users_path %> </li>
+			</ul>
+			<ul class="category_list_view clearfix">
+				<%= render @users %>
+			</ul>
+		</div>
+		
+		<%= render 'index_sidebar' %>
 
-<%= will_paginate %>
-
-<ul class="users">
-	<%= render @users %>
-</ul>
-
-<%= will_paginate %>
+		<%#= button_to "Create Event", create_event_path %>
+		<%#= button_to "Show My Events", my_events_path %>
+	</div>
+</div>

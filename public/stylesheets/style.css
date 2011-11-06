@@ -356,6 +356,75 @@ code { line-height:18px; }
 #content .related_post h3 { margin:0; padding:0 0 5px 0; font: bold 14px Arial, Helvetica, sans-serif; }
 #content .related_post li { padding-left:22px; font:bold 13px Arial, Helvetica, sans-serif; }
 
+/* users  ---------------------------- */
+.comment_user { font:12px Arial, Helvetica, sans-serif; display:block; padding-bottom:10px;  }
+.comment_user a { display:block;  width:97px; height:22px; text-align:left; padding:4px 4px;    }
+
+#content span.comm-reply a {   text-decoration:none;  } 
+#content span.comm-reply a:hover{   text-decoration:none;  }
+
+.users { height:100%; overflow:hidden; margin-bottom:60px;    }
+.user_spacer { margin-bottom:30px !important; }
+.pos_navigation { height:100%; overflow:hidden; padding-bottom:30px; margin-bottom:10px; border-bottom:1px solid #ccc;  }
+.user_left a, .user_right a {  font:bold 13px Arial, Helvetica, sans-serif; display:block; }
+
+#content .user_left a { padding:10px; background:url(images/previous.png) no-repeat left 12px; color:#868686;  }
+#content .user_right a { padding:10px; background:url(images/next.png) no-repeat right 13px; color:#868686; } 
+#content .user_left a:hover, #content .user_right a:hover { color:#000; }
+.main_img { padding:5px; margin-bottom:10px; margin-top:20px; }
+
+#content .users p.date { font-size:12px; }
+
+#content .users p.user_bottom { margin:0; padding:0 0 10px 0; clear:both; } 
+.by { font:12px Arial, Helvetica, sans-serif; display:block; padding-bottom:20px; margin-bottom:15px;  }
+.by a { font-weight:bold;}
+#content .users p.user_bottom .category { float:left; font:12px Arial, Helvetica, sans-serif; padding:2px 0 0 20px;   }
+#content .users p.user_bottom .tags { float:right; font:12px Arial, Helvetica, sans-serif; padding:2px 0 2px 20px;  }
+
+.small_thumb { height:100%; overflow:hidden;  margin-bottom:20px; margin-left:-15px; }
+.small_thumb img { float:left; margin:0 0 8px 13px; border:1px solid #ccc; }  
+
+.b_text { display:block;  font:bold 12px Arial, Helvetica, sans-serif; float:left; padding-top:10px; padding-right:70px; }
+
+.user_right h2 { margin:0 0 15px 0; padding:0;  }
+.bookmark { padding:10px 0; height:100%; overflow:hidden; clear:both;    }
+.video_main { border:2px solid #ccc; margin-bottom:20px; }
+.video_main object, .video_main embed { width:646px !important; height:430px !important; }
+
+blockquote { clear:both; height:100%; margin:10px 0 0px 5px; overflow:hidden; padding:0 0 5px 45px; }
+#content  blockquote p { font:italic 18px Georgia, "Times New Roman", Times, serif; margin:0 0 5px 0; padding:0; line-height:23px; }
+blockquote cite { font-size:12px; float:right; line-height:18px; text-align:right; display:block;   }
+blockquote a { font-size:13px; }
+
+
+#calendar_wrap{ padding:0; font-size:13px }
+#wp-calendar { width:100%; }
+#wp-calendar  caption { font-weight:bold; font:15px Arial, Helvetica, sans-serif; text-transform:uppercase; }
+#calendar_wrap caption{ padding:4px 0; background:#000;  margin-bottom:4px; color:#fff; text-align:center !important;  }
+#wp-calendar td { text-align:center; font:bold 12px Arial, Helvetica, sans-serif; padding:4px 0; background:#eee;}
+#wp-calendar th { text-align:center; font:bold 12px Arial, Helvetica, sans-serif; padding:4px 0; color:#fff; background:#666;  }
+#wp-calendar tbody td a { display:block; padding:4px 0; text-decoration:none !important; color:#fff !important; background:#000 !important; }
+#wp-calendar tbody td a:hover { color:#fff!important; background:#666 !important; }
+
+.users h1 {	font: 26px Georgia, "Times New Roman", Times, serif; font-variant:small-caps; }
+.users h2 {	font: 24px Georgia, "Times New Roman", Times, serif; margin:0; padding:0;  font-variant:small-caps; }
+.users h3 {	font: 20px Georgia, "Times New Roman", Times, serif; font-variant:small-caps; border-bottom:1px solid #ddd; margin-bottom:8px; }
+.users h4 {	font: 18px Georgia, "Times New Roman", Times, serif; font-variant:small-caps; }
+.users h5 {	font: 16px Georgia, "Times New Roman", Times, serif; font-variant:small-caps; }
+.users h6 {	font: 14px Georgia, "Times New Roman", Times, serif; font-variant:small-caps; }
+
+.content_spacer h4.cate_title { font-size:26px; clear:both; }
+
+dl,hr,h1,h2,h3,h4,h5,h6,ol,ul,pre,table,address,fieldset { padding:10px 0 5px 0; margin:0 }
+p { padding:0px 0 10px 0; margin:0; line-height:22px; margin:0;  }
+p em { line-height:20px; } 
+
+code { line-height:18px; }
+
+#content .related_user { margin:0 0 40px 0; padding:0;  }
+#content .related_user h3 { margin:0; padding:0 0 5px 0; font: bold 14px Arial, Helvetica, sans-serif; }
+#content .related_user li { padding-left:22px; font:bold 13px Arial, Helvetica, sans-serif; }
+
 /* Post Pagination */
 .pagination { clear:both; overflow:hidden; padding-top:10px; margin-bottom:50px; }
 .Navi .on { padding:3px 10px 9px 10px; margin-right:3px;  display:inline; display:block; float:left; }
