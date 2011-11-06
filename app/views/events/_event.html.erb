@@ -12,19 +12,18 @@
 		</p>
 		<div class="content_right">
 			<%= link_to "#{event.users.count} Attendees", event %>
-			<span class="rating">
-				<%#= image_tag 'default/rating_off.png' %>
-			</span>
-			<% if event.users.include?(current_user) %>
-					<%= link_to 'Decline Event', remove_attendee_event_path(:id => event.id), 
-																			:method => :post %>
-			<% else %>
-					<%= link_to 'Attend Event', attend_event_path(:id => event.id), 
-															  	  :method => :post %>								
-			<% end %>
+			<span class="rating"></span>
 			<% if event.owner_id == current_user.id %>
-					<span class="rating"></span>
-					<%= link_to "Edit Event", edit_event_path(event.id), :method => :post %>
+				<%= link_to "Edit Event", edit_event_path(event.id), :method => :post %>
+			<% else %>
+				<% if event.users.include?(current_user) %>
+						<%= link_to 'Decline Event', remove_attendee_event_path(:id => event.id,
+																				:user_id => @current_user.id), 
+																				:method => :post %>
+				<% else %>
+						<%= link_to 'Attend Event', attend_event_path(:id => event.id), 
+																  	  :method => :post %>								
+				<% end %>
 			<% end %>
 		</div>
 		<p class="address">

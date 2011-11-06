@@ -4,6 +4,7 @@
 <% end %>
 
 <% if @event.users.include?(current_user) %>
-	<%= button_to 'Decline Event', remove_attendee_event_path, :method => :post,
-													 		   :class => "button" %>
+	<%= button_to 'Decline Event', remove_attendee_event_path(:user_id => @current_user.id), 
+															  :method => :post,
+													 		  :class => "button" %>
 <% end %>
