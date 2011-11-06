@@ -2,7 +2,6 @@ class PagesController < ApplicationController
   
   def home
     @title = "Home"
-    @json = Event.all.to_gmaps4rails
     if signed_in?
       @event_feed = current_user.event_feed
       @past_events = @event_feed.where("event_date < ?", Time.now)
@@ -20,6 +19,7 @@ class PagesController < ApplicationController
                               .find(:all, :order => "event_date DESC")
       
     end
+    @json = @upcoming_events.to_gmaps4rails
   end
 
   def contact
