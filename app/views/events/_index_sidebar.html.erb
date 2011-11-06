@@ -1,9 +1,17 @@
 <div id="sidebar">
 	<div id="map_canvas" style="width: 294px; height: 370px; position: relative; margin-bottom: 30px;">
-		<%= gmaps({ map_options: {
-						auto_zoom: true,
-						id: "map_canvas" },
-					markers: { data: @json } }) %>
+		<% if @events.count <= 1 %>
+			<%= gmaps({ map_options: {
+							auto_zoom: false,
+							zoom: 14,
+							id: "map_canvas" },
+						markers: { data: @json } }) %>
+		<% else %>
+			<%= gmaps({ map_options: {
+							auto_zoom: true,
+							id: "map_canvas" },
+						markers: { data: @json } }) %>
+		<% end %>
 	</div>
 	
 	<div class="widget recent_comments_section">
@@ -12,13 +20,13 @@
 			<li class="clearfix">
 				<span class="li8">
 				</span>
-				<a><%= link_to @events.first.name, @events.first %></a><br /></br>
+				<a>Something Here</a><br /><br />
 				<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</span>
 			</li>
 			<li class="clearfix">
 				<span class="li8">
 				</span>
-				<a><%= link_to @events.second.name, @events.second %></a><br /></br>
+				<a>Something Here</a><br /><br />
 				<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</span>
 			</li>
 		</ul>

@@ -5,7 +5,11 @@
 			<div class="breadcrumb_in">Home » Events</div>
 		</div>
 		<div id="content" class="content_index clearfix">
-			<%= render 'index_sort' %>
+			<% if params[:search].blank? %>
+				<%= render 'index_sort' %>
+			<% else %>
+				<h3>Search results: </h3><br /><br />
+			<% end %>
 			<ul class="category_list_view clearfix">
 				<%= render @events %>
 			</ul>
