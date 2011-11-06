@@ -3,10 +3,12 @@ class EventsController < ApplicationController
   
   before_filter :authenticate, :only => [:my_events,
                                          :attend,
+                                         :edit,
                                          :remove_attendee]
-  before_filter :admin_or_owner, :only => [:destroy, 
-                                           :update, 
-                                           :remove_attendee]
+  before_filter :is_owner, :only => [:destroy, 
+                                     :update,
+                                     :edit,
+                                     :remove_attendee]
   
   def index
     @title = "All events"
@@ -127,9 +129,9 @@ class EventsController < ApplicationController
       redirect_to(root_path) unless current_user.admin?
     end
     
-    def admin_or_owner
+    def is_owner
       @event = Event.find(params[:id])
-      redirect_to(root_path) unless (@event.owner_id == current_user.id || current_user.admin?)
+      redirect_to(root_path) unless (@event.owner_id == current_user.id)
     end
     
     def authenticate
