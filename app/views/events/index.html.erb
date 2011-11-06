@@ -8,11 +8,35 @@
 			<ul class="sort_by">
 				<li class="title"> Events :</li>
 				<% if params[:list_by] == "event_feed" %>
-					<li class> <%= link_to "Upcoming", events_path %> </li>
-					<li class="current"> <%= link_to "Your Feed", :list_by => "event_feed" %> </li>
+					<li class>
+						<%= link_to "Upcoming", events_path %>
+					</li>
+					<li class="current">
+						<%= link_to "Feed", :list_by => "event_feed" %>
+					</li>
+					<li class>
+						<%= link_to "Owned", :list_by => "owned_events" %>
+					</li>
+				<% elsif params[:list_by] == "owned_events" %>
+					<li class> 
+						<%= link_to "Upcoming", events_path %>
+					</li>
+					<li class>
+						<%= link_to "Feed", :list_by => "event_feed" %>
+					</li>
+					<li class="current">
+						<%= link_to "Owned", :list_by => "owned_events" %>
+					</li>
 				<% else %>
-					<li class="current"> <%= link_to "Upcoming", events_path %> </li>
-					<li class> <%= link_to "Your Feed", :list_by => "event_feed" %> </li>
+					<li class="current">
+						<%= link_to "Upcoming", events_path %>
+					</li>
+					<li class>
+						<%= link_to "Feed", :list_by => "event_feed" %>
+					</li>
+					<li class>
+						<%= link_to "Owned", :list_by => "owned_events" %>
+					</li>
 				<% end %>
 			</ul>
 			<ul class="category_list_view clearfix">

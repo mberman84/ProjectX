@@ -17,6 +17,12 @@ class EventsController < ApplicationController
                              .order(sort_column + " " + sort_direction)
                              .find(:all, :order => "event_date DESC")
       @json = @events.to_gmaps4rails
+    elsif params[:list_by] == "owned_events"
+      @events = Event.where(:owner_id => @current_user.id)
+                     .limit(5)
+                     .order(sort_column + " " + sort_direction)
+                     .find(:all, :order => "event_date DESC")
+      @json = @events.to_gmaps4rails
     else
       @events = Event.search(params[:search])
                      .where("event_date >= ?", Time.now)
