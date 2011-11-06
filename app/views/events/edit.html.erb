@@ -11,7 +11,7 @@
 			<p>
 			<h5 class="form_title spacer_none">Enter Event Details</h5>
 			<%= form_for @event, :html => { :multipart => true } do |f| %>
-				<%= render 'edit_fields', :f => f %>
+				<%= render 'fields', :f => f %>
 				<%= f.submit "Update Event", :class => "b_review" %>
 			<% end %>
 		</div>
