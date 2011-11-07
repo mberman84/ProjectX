@@ -6,6 +6,11 @@
 		<div class="content">
 			<h3><%= link_to followed.name, followed %></h3>
 			<div class="content_right">
+				<%= form_for(current_user.relationships
+										 .find_by_followed_id(followed),
+				             :html => { :method => :delete }) do |f| %>
+				  <div class="actions"><%= f.submit "Unfollow" %></div>
+				<% end %>
 			</div>
 		</div>
 	</li>
