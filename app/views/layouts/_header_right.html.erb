@@ -24,16 +24,19 @@
 		 						  :id => "searchform2" do %>
 			<span class="searchfor">
 				<%= text_field_tag :search, params[:search],
-								   :value => "Search for",
+								   :placeholder => "Search for",
 				 				   :id => "events_search",
-								   :class => "s"%>
+								   :class => "s" %>
 				<small class="text">events or people</small>
 			</span>
 			<%= submit_tag "", :name => nil,
 			 				   :class => "search_btn" %>
 		<% end %>
 		<span class="near">
-			<input name="sn" id="sn" type="text" class="s" value="Near">
+			<%= text_field_tag :search, params[:search],
+							   :placeholder => "Near",
+			 				   :id => "events_search",
+							   :class => "s" %>
 			<small class="text">Zip code or address </small>
 		</span>
 	</div>

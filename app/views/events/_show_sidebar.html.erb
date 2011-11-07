@@ -6,8 +6,10 @@
 				Event Owner
 			<% elsif @event.users.include?(current_user) %>
 				Attending
+					<span class="fav"> Owner: </span><%= link_to @event.owner.name, @event.owner %>
 			<% else %>
 				Not Attending
+					<span class="fav"> Owner: </span><%= link_to @event.owner.name, @event.owner %>
 			<% end %>
 		</p>
 		<p>
