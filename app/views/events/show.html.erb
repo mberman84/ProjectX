@@ -1,7 +1,7 @@
 <div id="page" class="top_bg_in">
 	<div id="inner_pages" class="clearfix">
 		<h1>
-			<%= @event.name %> -- <%= @event.owner == current_user ? (link_to "Edit Event", edit_event_path) : nil %>
+			<%= @event.name %><%= @event.owner == current_user ? (link_to " -- Edit Event", edit_event_path) : nil %>
 		</h1>
 		<%= render 'show_breadcrumb' %>
 		<%= render 'show_content' %>
