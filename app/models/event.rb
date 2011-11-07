@@ -24,8 +24,11 @@ class Event < ActiveRecord::Base
                                          :small => "158x105>",
                                          :medium => "400x400>",
                                          :large => "600x600>"},
-                    :url  => "/assets/events/:id/:style/:basename.:extension",
-                    :path => ":rails_root/public/assets/events/:id/:style/:basename.:extension"
+                    :url  => "/:id/:style/:basename.:extension",
+                    :path => "/:id/:style/:basename.:extension",
+                    :storage => :s3,
+                    :s3_credentials => "#{RAILS_ROOT}/config/s3.yml"
+
   
   validates_attachment_presence :photo
   validates_attachment_size :photo, :less_than => 5.megabytes

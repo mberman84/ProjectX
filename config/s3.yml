@@ -1,0 +1,14 @@
+development:
+  bucket: event_images_dev_mberman
+  access_key_id: AKIAI2DLZ4LEUAVHGV3Q
+  secret_access_key: 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
+  
+test:
+  bucket: event_images_test_mberman
+  access_key_id: AKIAI2DLZ4LEUAVHGV3Q
+  secret_access_key: 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
+  
+production:
+  bucket: event_images_prod_mberman
+  access_key_id: AKIAI2DLZ4LEUAVHGV3Q
+  secret_access_key: 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

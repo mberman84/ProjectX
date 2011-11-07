@@ -6,6 +6,7 @@ gem 'paperclip'
 gem 'jquery-rails'
 gem 'gmaps4rails', '~> 1.3.1'
 gem 'geocoder'
+gem 'aws-s3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
