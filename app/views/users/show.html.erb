@@ -1,14 +1,16 @@
-<table class="profile" summary="Profile information">
-	<tr>
-		<td class="main">
-			<h1>
-				<%= gravatar_for @user %>
-				<%= @user.name %>
-				<%= render 'follow_form' if signed_in? %>
-			</h1>
-			<%= render 'attend_logic' %>
-			<%= render 'follow_logic' %>
+<div id="page" class="top_bg_in">
+	<div id="inner_pages" class="clearfix">
+		<h1><%= @user.name %></h1>
+		<%= render 'show_breadcrumb' %>
+		<%#= gravatar_for @user %>
+		<%= render 'follow_form' if signed_in? %>
+		<div id="content" class="content_index clearfix">
+			<ul class="category_list_view clearfix">
+				<%= render 'attend_logic' %>
+				<%= render 'attending_list' %>
+			</ul>
+		</div>
+		<%= render 'follow_logic' if signed_in? %>
 		</td>
-		<%= render 'sidebar' %>
-	</tr>
-</table>
+	</div>
+</div>
