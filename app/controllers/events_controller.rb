@@ -85,7 +85,7 @@ class EventsController < ApplicationController
     current_user.events << @event
     if @event.save
       flash[:success] = "Event created!"
-      redirect_to events_path
+      redirect_to @event
     else
       flash[:failure] = "Not saved correctly."
       redirect_to events_path

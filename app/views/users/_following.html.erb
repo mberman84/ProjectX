@@ -1,15 +1,15 @@
-<% current_user.following.limit(10).each do |followed| %>
-	<li>
-		<%= gravatar_for followed %>
-		<div class="content">
-			<h4><%= link_to followed.name, followed %></h4>
-			<div class="content_right">
-				<%= form_for(current_user.relationships
-										 .find_by_followed_id(followed),
-				             :html => { :method => :delete }) do |f| %>
-				  <div class="actions"><%= f.submit "Unfollow" %></div>
-				<% end %>
-			</div>
-		</div>
-	</li>
-<% end %>
+<ul class="recent_comments">	
+	<% current_user.following.limit(10).each do |followed| %>
+		<li class="clearfix">
+			<span class="li6">
+				<%= gravatar_for followed, :size => 60 %>
+			</span>
+			<%= link_to followed.name, followed, :style => "padding-left: 10px;" %>
+			<%= form_for(current_user.relationships
+									 .find_by_followed_id(followed),
+			             :html => { :method => :delete }) do |f| %>
+			<%= f.submit "Unfollow", :style => "float: left;" %>
+			<% end %>
+		</li>
+	<% end %>
+</ul>
