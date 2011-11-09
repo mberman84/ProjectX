@@ -3,13 +3,13 @@
 		<h1>Users</h1>
 		<%= render 'index_breadcrumb' %>
 		<div id="content" class="user_content clearfix">
-			<ul class="sort_by">
-				<li class="title"> Users :</li>
-				<li class="current"> <%= link_to "Following", users_path %> </li>
-				<li class> <%= link_to "Friends", users_path %> </li>
-			</ul>
+			<%= render 'index_sort' %>
 			<ul class="category_user_list_view clearfix">
-				<%= render 'index_following' %>
+				<% if params[:list_by] == "followers" %>
+					<%= render 'index_followers' %>
+				<% else %>
+					<%= render 'index_following' %>
+				<% end %>
 			</ul>
 		</div>
 		<%= render 'index_sidebar' %>

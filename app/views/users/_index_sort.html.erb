@@ -1,0 +1,18 @@
+<ul class="sort_by">
+	<li class="title"> Users :</li>
+	<% if params[:list_by] == "followers" %>
+		<li class>
+			<%= link_to "Following", users_path %>
+		</li>
+		<li class="current">
+			<%= link_to "Followers", :list_by => "followers" %>
+		</li>
+	<% else %>
+		<li class="current">
+			<%= link_to "Following", users_path %>
+		</li>
+		<li class>
+			<%= link_to "Followers", :list_by => "followers" %>
+		</li>
+	<% end %>
+</ul>
