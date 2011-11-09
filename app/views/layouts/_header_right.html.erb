@@ -22,22 +22,15 @@
 	<div class="searchform">
 		<%= form_tag events_path, :method => 'get',
 		 						  :id => "searchform2" do %>
-			<span class="searchfor">
+			<span class="searchfor" style="float: right;">
 				<%= text_field_tag :search, params[:search],
 								   :placeholder => "Search for",
 				 				   :id => "events_search",
 								   :class => "s" %>
 				<small class="text">events or people</small>
 			</span>
-			<%= submit_tag "", :name => nil,
+			<%#= submit_tag "", :name => nil,
 			 				   :class => "search_btn" %>
 		<% end %>
-		<span class="near">
-			<%= text_field_tag :search, params[:search],
-							   :placeholder => "Near",
-			 				   :id => "events_search",
-							   :class => "s" %>
-			<small class="text">Zip code or address </small>
-		</span>
 	</div>
 </div>
