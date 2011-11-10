@@ -1,5 +1,5 @@
 <ul class="recent_comments">	
-	<% current_user.following.limit(10).each do |followed| %>
+	<% @user.following.limit(10).each do |followed| %>
 		<li class="clearfix">
 			<span class="li6">
 				<%= gravatar_for followed, :size => 60 %>

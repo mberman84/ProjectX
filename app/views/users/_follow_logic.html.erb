@@ -1,7 +1,7 @@
 <% if @user.following.empty? %>
 	<h3>Not following anyone.</h3>
 <% else %>
-	<% if current_user.id == @user.id %>
+	<% if current_user == @user %>
 		<h3>Following :</h3>
 	<% else %>
 		<h3>This user is following :</h3>
