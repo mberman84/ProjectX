@@ -82,13 +82,13 @@ class EventsController < ApplicationController
     @event = Event.new(params[:event])
     @event.event_date = Chronic.parse(params[:event_date])
     @event.owner = current_user
-    current_user.events << @event
     if @event.save
+      current_user.events << @event
       flash[:success] = "Event created!"
       redirect_to @event
     else
-      flash[:failure] = "Not saved correctly."
-      redirect_to events_path
+      flash[:failure] = "Event not saved properly"
+      redirect_to create_event_path
     end
   end  
   
@@ -102,10 +102,10 @@ class EventsController < ApplicationController
     @event.event_date = Chronic.parse(params[:event_date])
     @event.category = params[:category]
     if @event.update_attributes(params[:event])
-      flash[:success] = params[:event_date]
+      flash[:success] = "Event updated!"
       redirect_to @event
     else
-      flash[:failure] = params[:event_date]
+      flash[:failure] = "Event not updated properly"
       @title = "Edit event"
       render 'edit'
     end
