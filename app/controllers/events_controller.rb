@@ -87,8 +87,7 @@ class EventsController < ApplicationController
       flash[:success] = "Event created!"
       redirect_to @event
     else
-      flash[:failure] = "Event not saved properly"
-      redirect_to create_event_path
+      render 'new'
     end
   end  
   
