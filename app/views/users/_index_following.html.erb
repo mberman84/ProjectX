@@ -1,12 +1,16 @@
-<% current_user.following.limit(10).each do |followed| %>
-	<li id="user" class="clearfix">
-		<a class="user_img">
-			<%= gravatar_for followed %>
-		</a>
-		<div class="content">
-			<h3><%= link_to followed.name, followed %></h3>
-			<div class="content_right">
+<% if current_user.following.empty? %>
+	Try following someone...maybe <%= link_to "Matt", @users[0] %>?
+<% else %>
+	<% current_user.following.limit(10).each do |followed| %>
+		<li id="user" class="clearfix">
+			<a class="user_img">
+				<%= gravatar_for followed %>
+			</a>
+			<div class="content">
+				<h3><%= link_to followed.name, followed %></h3>
+				<div class="content_right">
+				</div>
 			</div>
-		</div>
-	</li>
+		</li>
+	<% end %>
 <% end %>

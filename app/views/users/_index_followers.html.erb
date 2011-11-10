@@ -1,12 +1,16 @@
-<% current_user.followers.limit(10).each do |follower| %>
-	<li id="user" class="clearfix">
-		<a class="user_img">
-			<%= gravatar_for follower %>
-		</a>
-		<div class="content">
-			<h3><%= link_to follower.name, follower %></h3>
-			<div class="content_right">
+<% if current_user.followers.empty? %>
+	No followers yet.
+<% else %>
+	<% current_user.followers.limit(10).each do |follower| %>
+		<li id="user" class="clearfix">
+			<a class="user_img">
+				<%= gravatar_for follower %>
+			</a>
+			<div class="content">
+				<h3><%= link_to follower.name, follower %></h3>
+				<div class="content_right">
+				</div>
 			</div>
-		</div>
-	</li>
+		</li>
+	<% end %>
 <% end %>
