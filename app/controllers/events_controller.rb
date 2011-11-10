@@ -102,9 +102,10 @@ class EventsController < ApplicationController
     @event.event_date = Chronic.parse(params[:event_date])
     @event.category = params[:category]
     if @event.update_attributes(params[:event])
-      flash[:success] = "Event updated."
+      flash[:success] = params[:event_date]
       redirect_to @event
     else
+      flash[:failure] = params[:event_date]
       @title = "Edit event"
       render 'edit'
     end

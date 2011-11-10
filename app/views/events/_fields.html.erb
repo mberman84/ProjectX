@@ -13,10 +13,10 @@
 </div>
 <div class="form_row clearfix">
 	<label><%= f.label :event_date %></label>
-	<%= f.text_field :event_date,
-					 :value => @event.formatted_date,
-					 :id    => "property_name",
-					 :class => "textfield error" %>
+	<%= text_field_tag :event_date, nil,
+					   :value => @event.formatted_date,
+					   :id    => "property_name",
+					   :class => "textfield error" %>
 </div>
 <div class="form_row clearfix">
 	<label><%= f.label :description %></label>
