@@ -1,6 +1,6 @@
 <ul class="sort_by">
 	<li class="title"> Events :</li>
-	<% if params[:list_by] == "event_feed" %>
+	<% if params[:list_by] == "event_feed" && signed_in? %>
 		<li class>
 			<%= link_to "Upcoming", events_path %>
 		</li>
@@ -10,7 +10,7 @@
 		<li class>
 			<%= link_to "Owned", :list_by => "owned_events" %>
 		</li>
-	<% elsif params[:list_by] == "owned_events" %>
+	<% elsif params[:list_by] == "owned_events" && signed_in? %>
 		<li class> 
 			<%= link_to "Upcoming", events_path %>
 		</li>
@@ -24,11 +24,13 @@
 		<li class="current">
 			<%= link_to "Upcoming", events_path %>
 		</li>
-		<li class>
-			<%= link_to "Feed", :list_by => "event_feed" %>
-		</li>
-		<li class>
-			<%= link_to "Owned", :list_by => "owned_events" %>
-		</li>
+		<% if signed_in? %>
+			<li class>
+				<%= link_to "Feed", :list_by => "event_feed" %>
+			</li>
+			<li class>
+				<%= link_to "Owned", :list_by => "owned_events" %>
+			</li>
+		<% end %>
 	<% end %>
 </ul>
