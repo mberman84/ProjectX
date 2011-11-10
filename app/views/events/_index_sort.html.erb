@@ -8,7 +8,7 @@
 			<%= link_to "Feed", :list_by => "event_feed" %>
 		</li>
 		<li class>
-			<%= link_to "Owned", :list_by => "owned_events" %>
+			<%= link_to "My Events", :list_by => "owned_events" %>
 		</li>
 	<% elsif params[:list_by] == "owned_events" && signed_in? %>
 		<li class> 
@@ -18,7 +18,7 @@
 			<%= link_to "Feed", :list_by => "event_feed" %>
 		</li>
 		<li class="current">
-			<%= link_to "Owned", :list_by => "owned_events" %>
+			<%= link_to "My Events", :list_by => "owned_events" %>
 		</li>
 	<% else %>
 		<li class="current">
@@ -29,7 +29,7 @@
 				<%= link_to "Feed", :list_by => "event_feed" %>
 			</li>
 			<li class>
-				<%= link_to "Owned", :list_by => "owned_events" %>
+				<%= link_to "My Events", :list_by => "owned_events" %>
 			</li>
 		<% end %>
 	<% end %>

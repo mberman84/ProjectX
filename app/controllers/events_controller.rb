@@ -11,16 +11,18 @@ class EventsController < ApplicationController
   
   def index
     @title = "All events"
-    if params[:list_by] == "event_feed" && signed_in?
-      @events = current_user.event_feed
-                             .where("event_date >= ?", Time.now)
-                             .limit(5)
-                             .find(:all, :order => "event_date DESC")
-      @json = @events.to_gmaps4rails
-    elsif params[:list_by] == "owned_events" && signed_in?
-      @events = Event.where(:owner_id => current_user.id)
-                     .limit(5)
-                     .find(:all, :order => "event_date DESC")
+    if signed_in?
+      if params[:search]
+        @events = Event.search(params[:search])
+                       .where("event_date >= ?", Time.now)
+                       .limit(5)
+                       .find(:all, :order => "event_date DESC")
+      else
+        @events = current_user.event_feed
+                              .where("event_date >= ?", Time.now)
+                              .limit(5)
+                              .find(:all, :order => "event_date DESC")
+      end
       @json = @events.to_gmaps4rails
     else
       @events = Event.search(params[:search])
