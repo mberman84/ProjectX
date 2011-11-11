@@ -1,6 +1,4 @@
 SampleApp::Application.routes.draw do
-  #devise_for :users
-
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -30,6 +28,6 @@ SampleApp::Application.routes.draw do
   match '/about', :to => 'pages#about'
   match '/help', :to => 'pages#help'
   
-  root :to => 'pages#home'
+  root :to => 'events#index'
 
 end

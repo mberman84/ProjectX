@@ -31,19 +31,19 @@
 			<span>Location: </span><%= event.location %>
 		</p>
 		<p class="address">
-			<span>You know: </span>
-			<% event.users.each do |attendee| %>
-				<% if current_user.try(:following?, attendee) %>
-					<%= attendee.name.capitalize %>
-				<% end %>
-			<% end %>
-		</p>
-		<p class="address">
 			<span>You are: </span>
 			<% if current_user && event.users.include?(current_user) %>
 				Attending
 			<% else %>
 				Not attending
+			<% end %>
+		</p>
+		<p class="address">
+			<% event.users.each do |attendee| %>
+				<% if current_user.try(:following?, attendee) %>
+					<%#= attendee.name.capitalize %>
+					<%= gravatar_for attendee, :size => 35 %>
+				<% end %>
 			<% end %>
 		</p>
 	</div>

@@ -1,8 +1,8 @@
 <div id="page" class="top_bg_in">
 	<div id="inner_pages" class="clearfix">
+		<%#= gravatar_for @user, :size => 100 %>
 		<h1><%= @user.name %></h1>
-		<%= render 'show_breadcrumb' %>
-		<%#= gravatar_for @user %>
+		<%#= render 'show_breadcrumb' %>
 		<%= render 'follow_form' if signed_in? %>
 		<div id="content" class="content_index clearfix">
 			<ul class="category_list_view clearfix">
