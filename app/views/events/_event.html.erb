@@ -1,7 +1,5 @@
 <li id="post" class="clearfix">
-	<a class="post_img">
-		<%= image_tag event.photo.url(:small) unless event.photo.nil? %>
-	</a>
+		<%= link_to image_tag(event.photo.url(:small)), event, :class => "post_img"  %>
 	<div class="content">
 		<h3><%= link_to event.name, event %></h3>
 		<p class="timing">
@@ -17,9 +15,9 @@
 				<%= link_to "Edit Event", edit_event_path(event.id), :method => :post %>
 			<% else %>
 				<% if event.users.include?(current_user) %>
-						<%= link_to 'Decline Event', remove_attendee_event_path(:id => event.id,
+						Attending (<%= link_to 'Cancel', remove_attendee_event_path(:id => event.id,
 																				:user_id => current_user.id), 
-																				:method => :post %>
+																				:method => :post %>)
 				<% else %>
 						<%= link_to 'Attend Event', attend_event_path(:id => event.id), 
 																  	  :method => :post %>								
@@ -32,7 +30,7 @@
 		<p class="address">
 			<span>You are: </span>
 			<% if event.users.include?(current_user) %>
-				Attending
+				Attending <%= event.owner == current_user ? "(Owner)" : nil %>
 			<% else %>
 				Not attending
 			<% end %>
@@ -41,7 +39,7 @@
 			<% event.users.each do |attendee| %>
 				<% if current_user.try(:following?, attendee) %>
 					<%#= attendee.name.capitalize %>
-					<%= gravatar_for attendee, :size => 35 %>
+					<%= link_to gravatar_for(attendee, :size => 35), attendee  %>
 				<% end %>
 			<% end %>
 		</p>
