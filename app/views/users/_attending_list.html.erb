@@ -1,8 +1,6 @@
 <% @user.events.each do |event| %>
 <li id="post" class="clearfix">
-	<a class="post_img">
-		<%= image_tag event.photo.url(:small) unless event.photo.nil? %>
-	</a>
+		<%= link_to image_tag(event.photo.url(:small)), event, :class => "post_img" %>
 	<div class="content">
 		<h3><%= link_to event.name, event %></h3>
 		<p class="timing">
@@ -42,7 +40,7 @@
 			<% event.users.each do |attendee| %>
 				<% if current_user.try(:following?, attendee) %>
 					<%#= attendee.name.capitalize %>
-					<%= gravatar_for attendee, :size => 35 %>
+					<%= link_to gravatar_for(attendee, :size => 35), attendee  %>
 				<% end %>
 			<% end %>
 		</p>
