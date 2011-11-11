@@ -9,7 +9,9 @@
 				<h3>Search results: </h3><br /><br />
 			<% end %>
 			<ul class="category_list_view clearfix">
-				<%= render @events %>
+				<% @events.each do |event| %>
+					<%= render 'shared/event', :event => event %>
+				<% end %>
 			</ul>
 		</div>
 		<%= render 'index_sidebar' %>

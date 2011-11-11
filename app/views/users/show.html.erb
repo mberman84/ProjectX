@@ -7,7 +7,9 @@
 		<div id="content" class="content_index clearfix">
 			<ul class="category_list_view clearfix">
 				<%= render 'attend_logic' %>
-				<%= render 'attending_list' %>
+				<% @user.events.each do |event| %>
+					<%= render 'shared/event', :event => event %>
+				<% end %>
 			</ul>
 		</div>	
 		<%= render 'show_sidebar' %>
