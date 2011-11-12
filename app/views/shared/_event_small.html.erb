@@ -1,5 +1,12 @@
 <li class="clearfix">
 	<%= link_to event.name, event %>
+	<% if event.owner == current_user %>
+		(<%= link_to "Edit", edit_event_path(event.id), :method => :post %>)
+	<% else %>
+		(<%= link_to 'Remove', remove_attendee_event_path(:id => event.id,
+														  :user_id => current_user.id), 
+														  :method => :post %>)
+	<% end %>
 	<p><%= distance_of_time_in_words(Time.now, event.event_date) %> from now</p>
 	<% event.users.each do |attendee| %>
 		<% if current_user.try(:following?, attendee) %>
