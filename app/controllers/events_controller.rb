@@ -23,7 +23,11 @@ class EventsController < ApplicationController
                               .limit(10)
                               .find(:all, :order => "event_date DESC")
       end
-      @json = @events.to_gmaps4rails
+      @upcoming_events = current_user.events
+                                     .where("event_date >= ?", Time.now)
+                                     .limit(4)
+                                     .find(:all, :order => "event_date DESC")
+      @json = @upcoming_events.to_gmaps4rails
     else
       @events = Event.search(params[:search])
                      .where("event_date >= ?", Time.now)

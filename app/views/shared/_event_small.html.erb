@@ -1,0 +1,9 @@
+<li class="clearfix">
+	<%= link_to event.name, event %> (<%= event.formatted_date %>)<br /><br />
+	<span><%= event.description %></span><br /><br />
+	<% event.users.each do |attendee| %>
+		<% if current_user.try(:following?, attendee) %>
+			<%= link_to gravatar_for(attendee, :size => 25), attendee  %>
+		<% end %>
+	<% end %>
+</li>

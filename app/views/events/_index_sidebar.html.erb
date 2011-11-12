@@ -2,24 +2,9 @@
 	<div class="widget recent_comments_section">
 		<h3>Upcoming Events</h3>
 		<ul class="recent comments">
-			<li class="clearfix">
-				<span class="li8">
-				</span>
-				<a>Something Here</a><br /><br />
-				<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</span>
-			</li>
-			<li class="clearfix">
-				<span class="li8">
-				</span>
-				<a>Something Here</a><br /><br />
-				<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</span>
-			</li>
-			<li class="clearfix">
-				<span class="li8">
-				</span>
-				<a>Something Here</a><br /><br />
-				<span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</span>
-			</li>
+			<% @upcoming_events.each do |event| %>
+				<%= render 'shared/event_small', :event => event %>
+			<% end %>
 		</ul>
 	</div>
 	<div id="map_canvas" style="width: 294px; height: 370px; position: relative; margin-bottom: 30px;">
