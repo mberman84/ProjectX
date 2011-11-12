@@ -6,4 +6,7 @@
 			<%= link_to gravatar_for(attendee, :size => 25), attendee  %>
 		<% end %>
 	<% end %>
+	<% if !signed_in? %>
+		<%= truncate(event.description, :length => 98) %><br /><br />
+	<% end %>
 </li>
