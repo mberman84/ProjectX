@@ -1,6 +1,6 @@
 <li class="clearfix">
-	<%= link_to event.name, event %> (<%= event.formatted_date %>)<br /><br />
-	<span><%= event.description %></span><br /><br />
+	<%= link_to event.name, event %>
+	<p><%= distance_of_time_in_words(Time.now, event.event_date) %> from now</p>
 	<% event.users.each do |attendee| %>
 		<% if current_user.try(:following?, attendee) %>
 			<%= link_to gravatar_for(attendee, :size => 25), attendee  %>
