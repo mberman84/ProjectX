@@ -1,5 +1,5 @@
 <% if current_user.following.empty? %>
-	Try following someone...maybe <%= link_to "Matt", @users[0] %>?
+	Not following anyone yet. Try following <%= link_to "Matt", @users[0] %>.
 <% else %>
 	<% current_user.following.limit(10).each do |followed| %>
 		<li id="user" class="clearfix">

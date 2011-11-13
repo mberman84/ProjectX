@@ -2,8 +2,16 @@
 	<div class="widget recent_comments_section">
 		<h3>My Upcoming Events</h3>
 		<ul class="recent comments">
-			<% @upcoming_events.each do |event| %>
-				<%= render 'shared/event_small', :event => event %>
+			<% if signed_in? %>
+				<% if !@upcoming_events.empty? %>
+					<% @upcoming_events.each do |event| %>
+						<%= render 'shared/event_small', :event => event %>
+					<% end %>
+				<% else %>
+					Nothing here yet. Try attending an event.
+				<% end %>
+			<% else %>
+				<%= link_to "Sign in", signin_path %> or <%= link_to "Register", signin_path %> to view events.
 			<% end %>
 		</ul>
 	</div>

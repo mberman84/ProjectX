@@ -3,7 +3,9 @@
 		<h1>Event Stream</h1><br />
 		<div id="content" class="content_index clearfix">
 			<% if params[:search].blank? %>
-				<%#= render 'index_sort' %>
+				<% if @events.empty? %>
+					Try following someone to get event suggestions. How about <%= link_to "Matt", @matt %>?
+				<% end %>
 			<% else %>
 				<h3>Search results: </h3><br /><br />
 			<% end %>
