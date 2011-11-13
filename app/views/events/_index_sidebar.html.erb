@@ -16,7 +16,7 @@
 		</ul>
 	</div>
 	<div id="map_canvas" style="width: 294px; height: 370px; position: relative; margin-bottom: 30px;">
-		<% if @events.count <= 1 %>
+		<% if @upcoming_events.count == 1 %>
 			<%= gmaps({ map_options: {
 							auto_zoom: false,
 							zoom: 14,
