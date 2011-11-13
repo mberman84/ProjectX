@@ -22,11 +22,13 @@ SampleApp::Application.routes.draw do
   match '/create_event', :to => 'events#new'
   match '/my_events', :to => 'events#my_events'
   match '/signin', :to => 'sessions#new'
-  match '/signout', :to => 'sessions#destroy'
   match '/contact', :to => 'pages#contact'
   match '/about', :to => 'pages#about'
   match '/help', :to => 'pages#help'
+  match "/auth/:provider/callback" => "sessions#create"
+  match "/signout" => "sessions#destroy", :as => :signout
   
   root :to => 'events#index'
+  
 
 end

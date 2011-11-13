@@ -38,6 +38,14 @@ class User < ActiveRecord::Base
                        
   before_save :encrypt_password
   
+  def self.create_with_omniauth(auth)
+    create! do |user|
+      user.provider = auth["provider"]
+      user.uid = auth["uid"]
+      user.name = auth["user_info"]["name"]
+    end
+  end
+  
   def event_feed
     ids = self.following.collect(&:id) << self.id
     Event.includes(:users).where(["users.id IN (#{ids.join(',')})"])
