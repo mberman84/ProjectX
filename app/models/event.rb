@@ -37,13 +37,10 @@ class Event < ActiveRecord::Base
                                                               'image/jpg']
   
   validates :name, :presence => true,
-                   :length => { :maximum => 50 }
-                   
+                   :length => { :maximum => 50 }          
   validates :description, :presence => true,
                           :length => { :maximum => 200 }
-                          
   validates :category, :presence => true
-  
   validates :location, :presence => true
   
   def self.search(search)

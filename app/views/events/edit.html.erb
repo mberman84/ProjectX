@@ -9,7 +9,8 @@
 			<h5 class="form_title spacer_none">Edit Event Details</h5>
 			<%= form_for @event, :html => { :multipart => true } do |f| %>
 				<%= render 'fields', :f => f %>
-				<%= f.submit "Update Event", :class => "b_review" %>
+				<%= f.submit "Update Event", :class => "b_review",
+				 							 :disable_with => "Updating..."%>
 			<% end %>
 		</div>
 	</div>
