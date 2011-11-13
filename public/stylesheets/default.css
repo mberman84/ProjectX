@@ -172,7 +172,9 @@ a.post_img { box-shadow: 1px 1px 1px #ddd; -moz-box-shadow: 1px 1px 1px #ddd; -w
 #content p.note { color:#999; }
 
 .b_review { background:#00b2dc; color:#fff; border:1px solid #019bc0; -moz-border-radius:20px;  -webkit-border-radius:20px; text-shadow:1px 1px 1px #333;  }
+.b_review_warn { background:#FF0000; color:#fff; border:1px solid #FF0000; -moz-border-radius:20px;  -webkit-border-radius:20px; text-shadow:1px 1px 1px #333;  }
 .b_review:hover { background:#000; border:1px solid #333; }
+.b_review_warn:hover { background:#000; border:1px solid #333; }
 
 .b_submit { background:#fafbfb url(images/default/buttonbg.png) repeat-x left bottom; color:#5c5c5c; border:1px solid #adaeb0;
 -moz-border-radius:15px;  -webkit-border-radius:15px; text-transform:uppercase; text-shadow:1px 1px 1px #fff; }

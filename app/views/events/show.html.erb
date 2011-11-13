@@ -4,7 +4,6 @@
 			<%= @event.name %><%= @event.owner == current_user ? (link_to " -- Edit Event", edit_event_path) : nil %>
 		</h1>
 		<br />
-		<%#= render 'show_breadcrumb' %>
 		<%= render 'show_content' %>
 		<%= render 'show_sidebar' %>
 	</div>

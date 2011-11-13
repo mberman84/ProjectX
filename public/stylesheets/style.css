@@ -547,6 +547,7 @@ code { line-height:18px; }
 #span_Free { clear:both; display:block; font-weight: bold; }
 
 .b_review { padding:7px 20px; margin:40px 0 10px 147px; float:left; font:bold 17px Arial, Helvetica, sans-serif; cursor:pointer;  }
+.b_review_warn { padding:7px 20px; margin:40px 0 10px 147px; float:left; font:bold 17px Arial, Helvetica, sans-serif; cursor:pointer;  }
 .b_submit { padding:4px 20px; margin-left:147px; float:left; font:bold 13px Arial, Helvetica, sans-serif; cursor:pointer; margin-bottom:20px; text-transform:uppercase; }
 
 input#submit{ padding:7px 20px; font:bold 13px Arial, Helvetica, sans-serif; cursor:pointer; margin-bottom:20px; text-transform:uppercase; }

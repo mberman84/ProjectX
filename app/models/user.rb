@@ -14,8 +14,8 @@ class User < ActiveRecord::Base
   
   has_and_belongs_to_many :events, :uniq => true
   
-  has_many :relationships, :dependent => :destroy,
-                             :foreign_key => "follower_id"
+  has_many :relationships, :dependent   => :destroy,
+                           :foreign_key => "follower_id"
   has_many :reverse_relationships, :dependent => :destroy,
                                    :foreign_key => "followed_id",
                                    :class_name => "Relationship"

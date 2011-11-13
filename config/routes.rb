@@ -8,7 +8,6 @@ SampleApp::Application.routes.draw do
   resources :events do
     member do
       post :attend
-      #post :remove_attendee
       post "/remove_attendee/:user_id" => "events#remove_attendee", :as=>:remove_attendee
       post "/edit" => "events#edit"
     end
