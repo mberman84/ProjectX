@@ -10,28 +10,25 @@ class Event < ActiveRecord::Base
                   :latitude,
                   :longitude
   
-  CATEGORIES = ['Music', 'Outdoors', 'Party']
+  CATEGORIES = ['Music', 'Nature', 'Party', 'Festival', 'Date Night', 'Show', 'Food', 'Exercise']
   
   has_and_belongs_to_many :users, :uniq => true
   belongs_to :owner, class_name: "User"
   
   acts_as_gmappable :process_geocoding => false
-  
-  geocoded_by :location
-  after_validation :geocode, :if => :location_changed?
+  geocoded_by       :location
+  after_validation  :geocode, :if => :location_changed?
   
   has_attached_file :photo, :styles => { :thumb => "70x70>",
                                          :small => "158x105>",
                                          :medium => "400x400>",
                                          :large => "600x600>"},
-                    :url  => "/:id/:style/:basename.:extension",
-                    :path => "/:id/:style/:basename.:extension",
-                    :storage => :s3,
+                    :url            => "/:id/:style/:basename.:extension",
+                    :path           => "/:id/:style/:basename.:extension",
+                    :storage        => :s3,
                     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml"
-
-  
-  validates_attachment_presence :photo
-  validates_attachment_size :photo, :less_than => 5.megabytes
+  validates_attachment_presence     :photo
+  validates_attachment_size         :photo, :less_than    => 5.megabytes
   validates_attachment_content_type :photo, :content_type => ['image/jpeg', 
                                                               'image/png', 
                                                               'image/jpg']

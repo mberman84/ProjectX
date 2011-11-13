@@ -30,13 +30,20 @@ class User < ActiveRecord::Base
                    :length => { :maximum => 50 }
   validates :email, :presence => true,
                     :format => { :with => email_regex },
-                    :uniqueness => { :case_sensitive => false }
-                    
+                    :uniqueness => { :case_sensitive => false }     
   validates :password, :presence => true,
                        :confirmation => true,
                        :length => { :within => 6..40 }
                        
   before_save :encrypt_password
+  
+  #def self.create_with_omniauth(auth)
+  #  create! do |user|
+  #    user.provider = auth["provider"]
+  #    user.uid = auth["uid"]
+  #    user.name = auth["user_info"]["name"]
+  #  end
+  #end
   
   def event_feed
     ids = self.following.collect(&:id) << self.id
@@ -55,7 +62,6 @@ class User < ActiveRecord::Base
     relationships.find_by_followed_id(followed).destroy
   end
   
-  # Return true if the user's password matches the submitted password.
   def has_password?(submitted_password)
     encrypted_password == encrypt(submitted_password)
   end
