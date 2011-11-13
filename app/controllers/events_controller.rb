@@ -10,7 +10,6 @@ class EventsController < ApplicationController
                                          :edit]
   
   def index
-    #debugger
     @title = "All events"
     if signed_in?
       if params[:search]

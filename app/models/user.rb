@@ -10,7 +10,9 @@ class User < ActiveRecord::Base
                          :password, 
                          :password_confirmation, 
                          :time_zone, 
-                         :remember_me
+                         :remember_me,
+                         :provider,
+                         :uid
   
   has_and_belongs_to_many :events, :uniq => true
   
