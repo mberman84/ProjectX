@@ -32,17 +32,18 @@ class User < ActiveRecord::Base
                     :format => { :with => email_regex },
                     :uniqueness => { :case_sensitive => false }
                     
-  validates :password, :presence => true,
-                       :confirmation => true,
-                       :length => { :within => 6..40 }
+  #validates :password, :presence => true,
+  #                     :confirmation => true,
+  #                     :length => { :within => 6..40 }
                        
-  before_save :encrypt_password
+  #before_save :encrypt_password
   
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]
-      user.name = auth["user_info"]["name"]
+      user.name = auth["info"]["name"]
+      user.email = auth["info"]["email"]
     end
   end
   

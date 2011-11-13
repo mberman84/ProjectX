@@ -25,7 +25,7 @@ SampleApp::Application.routes.draw do
   match '/contact', :to => 'pages#contact'
   match '/about', :to => 'pages#about'
   match '/help', :to => 'pages#help'
-  match "/auth/:provider/callback" => "sessions#create"
+  match "/auth/:provider/callback" => "sessions#create_with_omni"
   match "/signout" => "sessions#destroy", :as => :signout
   
   root :to => 'events#index'

@@ -5,11 +5,12 @@ class EventsController < ApplicationController
                                          :attend,
                                          :edit,
                                          :remove_attendee]
-  before_filter :is_owner, :only => [:destroy, 
-                                     :update,
-                                     :edit]
+  before_filter :is_owner,     :only => [:destroy, 
+                                         :update,
+                                         :edit]
   
   def index
+    #debugger
     @title = "All events"
     if signed_in?
       if params[:search]
