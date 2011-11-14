@@ -1,5 +1,5 @@
 <li id="post" class="clearfix">
-	<%= link_to image_tag(event.photo.url(:small)), event, :class => "post_img"  %>
+	<%= (link_to image_tag(event.photo.url(:small)), event, :class => "post_img") unless event.photo_file_name.nil?  %>
 	<div class="content">
 		<h3><%= link_to event.name , event %></h3>
 		<p class="timing">
