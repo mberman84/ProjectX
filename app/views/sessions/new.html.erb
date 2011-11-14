@@ -19,6 +19,12 @@
 							<%= f.submit "Sign in", :class => "b_signin_n" %>
 						<% end %>
 					</div>
+					<% if current_user %>
+					  Welcome <%= current_user.name %>!
+					  <%= link_to "Sign Out", signout_path %>
+					<% else %>
+					  <%= link_to (image_tag "/images/fbconnect.png", :width => 250), "/auth/facebook" %>
+					<% end %>
 				</div>				
 			</div>
 			<div class="registration_form_r">
@@ -36,12 +42,6 @@
 				</div>					
 			</div>
 		</div>
-		<% if current_user %>
-		  Welcome <%= current_user.name %>!
-		  <%= link_to "Sign Out", signout_path %>
-		<% else %>
-		  <%= link_to "Sign in with Facebook", "/auth/facebook" %>
-		<% end %>
 	</div>
 </div>
 
