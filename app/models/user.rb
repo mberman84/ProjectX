@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
                          :time_zone, 
                          :remember_me,
                          :provider,
-                         :uid
+                         :uid,
+                         :location
   
   has_and_belongs_to_many :events, :uniq => true
   
@@ -42,10 +43,11 @@ class User < ActiveRecord::Base
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider = auth["provider"]
-      user.uid = auth["uid"]
-      user.name = auth["info"]["name"]
-      user.email = auth["info"]["email"]
-      user.pwsave = false
+      user.uid      = auth["uid"]
+      user.name     = auth["info"]["name"]
+      user.email    = auth["info"]["email"]
+      user.location = auth["info"]["location"]
+      user.pwsave   = false
     end
   end
   
