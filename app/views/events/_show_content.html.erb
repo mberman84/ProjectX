@@ -2,15 +2,17 @@
 	<div class="single_post">
 		<div id="post" class="posts post_spacer">
 			<div id="galleria">
-				<div class="galleria-container">
-					<div class="galleria-stage">
-						<div class="galleria-images" style="position:relative; top: 0px; left: 0px; width: 100%; height: 100%; ">
-							<div class="galleria-image" style="overflow-x: hidden; overflow-y: hidden; position: absolute; top: 0px; left: 0px; z-index: 0;" > 
-								<%= image_tag @event.photo.url(:large) unless @event.photo.nil? %>
+				<% if !@event.photo_file_name.nil? %>
+					<div class="galleria-container">
+						<div class="galleria-stage">
+							<div class="galleria-images" style="position:relative; top: 0px; left: 0px; width: 100%; height: 100%; ">
+								<div class="galleria-image" style="overflow-x: hidden; overflow-y: hidden; position: absolute; top: 0px; left: 0px; z-index: 0;" > 
+									<%= image_tag @event.photo.url(:large) %>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
+				<% end %>
 			</div>
 			<h3>Description</h3>
 			<p><%= @event.description %></p>

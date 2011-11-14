@@ -1,7 +1,7 @@
 <li id="post" class="clearfix">
 	<%= link_to image_tag(event.photo.url(:small)), event, :class => "post_img"  %>
 	<div class="content">
-		<h3><%= link_to event.name, event %></h3>
+		<h3><%= link_to event.name , event %></h3>
 		<p class="timing">
 			<span>Date: </span><%= event.formatted_date_simple %>
 		</p>
