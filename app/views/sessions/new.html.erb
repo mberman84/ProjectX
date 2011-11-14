@@ -36,6 +36,12 @@
 				</div>					
 			</div>
 		</div>
+		<% if current_user %>
+		  Welcome <%= current_user.name %>!
+		  <%= link_to "Sign Out", signout_path %>
+		<% else %>
+		  <%= link_to "Sign in with Facebook", "/auth/facebook" %>
+		<% end %>
 	</div>
 </div>
 
