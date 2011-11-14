@@ -3,7 +3,7 @@
 	<div class="content">
 		<h3><%= link_to event.name , event %></h3>
 		<p class="timing">
-			<span>Date: </span><%= event.formatted_date_simple %>
+			<span>Date: </span><%= event.formatted_date %>
 		</p>
 		<p class="timing">
 			<span>Cost: </span><%= event.cost? ? number_to_currency(event.cost) : "Free" %>
