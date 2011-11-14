@@ -22,7 +22,9 @@ class SessionsController < ApplicationController
     user = User.find_by_email(auth["info"]["email"])
     if user && user.provider.blank?
       user.pwsave = false
-      user.update_attributes!(:provider => auth["provider"], :uid => auth["uid"])
+      user.update_attributes!(:provider => auth["provider"], 
+                              :uid      => auth["uid"],
+                              :fbimg    => auth["info"]["image"])
     elsif user && !user.provider.blank?
       user.pwsave = false
       user = User.find_by_provider_and_uid(auth["provider"], auth["uid"])

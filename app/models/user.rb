@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
                          :time_zone, 
                          :remember_me,
                          :provider,
-                         :uid
+                         :uid,
+                         :fbimg
   
   has_and_belongs_to_many :events, :uniq => true
   
@@ -45,6 +46,7 @@ class User < ActiveRecord::Base
       user.uid = auth["uid"]
       user.name = auth["info"]["name"]
       user.email = auth["info"]["email"]
+      user.fbimg = auth["info"]["image"]
       user.pwsave = false
     end
   end
