@@ -5,7 +5,7 @@
 	<% if current_user && (current_user == @user) %>
 		<h4>You are attending:</h4>
 	<% else %>
-		<h4>This user is attending:</h4>
+		<h4><%= @user.name %> is attending:</h4>
 	<% end %>
 <% end %>
 <br />

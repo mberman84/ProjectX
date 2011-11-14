@@ -4,7 +4,7 @@
 	<% if current_user == @user %>
 		<h3>Following :</h3>
 	<% else %>
-		<h3>This user is following :</h3>
+		<h3><%= @user.name %> is following :</h3>
 	<% end %>
 	<%= render :partial => 'show_following' %></br>
 <% end %>
