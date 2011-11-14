@@ -27,10 +27,10 @@
 					<div class="registration_form_box">
 						<h4>Sign up now</h4>
 						<div class="form_row clearfix">
-							<%#= form_for(@user) do |f| %>
-								<%#= render 'signup_fields', :f => f %>
-								<%#= f.submit "Register Now", :class => "b_registernow" %>
-							<%# end %>
+							<%= form_for(@user) do |f| %>
+								<%= render 'signup_fields', :f => f %>
+								<%= f.submit "Register Now", :class => "b_registernow" %>
+							<% end %>
 						</div>
 					</div>
 				</div>					

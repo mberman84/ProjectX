@@ -21,8 +21,10 @@ class SessionsController < ApplicationController
     auth = request.env["omniauth.auth"]
     user = User.find_by_email(auth["info"]["email"])
     if user && user.provider.blank?
+      user.pwsave = false
       user.update_attributes!(:provider => auth["provider"], :uid => auth["uid"])
     elsif user && !user.provider.blank?
+      user.pwsave = false
       user = User.find_by_provider_and_uid(auth["provider"], auth["uid"])
     elsif !user
       user = User.create_with_omniauth(auth)

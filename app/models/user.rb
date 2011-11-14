@@ -1,10 +1,5 @@
 require 'digest'
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
-  #devise :database_authenticatable, :registerable,
-  #       :recoverable, :rememberable, :trackable, :validatable
-  
   attr_accessor :password
   attr_accessible :name, :email, 
                          :password, 
@@ -34,12 +29,16 @@ class User < ActiveRecord::Base
                     :format => { :with => email_regex },
                     :uniqueness => { :case_sensitive => false }
                     
-  #validates :password, :presence => true,
-  #                     :confirmation => true,
-  #                     :length => { :within => 6..40 }
-  #                     :if => :should_validate_password?
+  validates :password, :presence => true,
+                       :confirmation => true,
+                       :length => { :within => 6..40 },
+                       :if => :should_validate_password?
                        
-  #before_save :encrypt_password
+  before_save :encrypt_password, :if => :should_validate_password?
+  
+  def should_validate_password?
+    self.pwsave
+  end
   
   def self.create_with_omniauth(auth)
     create! do |user|
@@ -47,6 +46,7 @@ class User < ActiveRecord::Base
       user.uid = auth["uid"]
       user.name = auth["info"]["name"]
       user.email = auth["info"]["email"]
+      user.pwsave = false
     end
   end
   
