@@ -10,7 +10,7 @@ class Event < ActiveRecord::Base
                   :latitude,
                   :longitude
   
-  CATEGORIES = ['Music', 'Nature', 'Party', 'Festival', 'Date Night', 'Show', 'Food', 'Exercise']
+  CATEGORIES = ['Music', 'Nature', 'Party', 'Festival', 'Date Night', 'Show', 'Food', 'Exercise', 'Other']
   
   has_and_belongs_to_many :users, :uniq => true
   belongs_to :owner, class_name: "User"
