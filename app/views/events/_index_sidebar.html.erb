@@ -11,7 +11,8 @@
 					Nothing here yet. Try attending an event.
 				<% end %>
 			<% else %>
-				<%= link_to "Sign in", signin_path %> or <%= link_to "Register", signin_path %> to view events.
+				<%= link_to "Sign in", signin_path %> or <%= link_to "Register", signin_path %> to view events.<br /><br />
+				<%= link_to (image_tag "/images/fbconnect.png", :width => 180), "/auth/facebook" %>
 			<% end %>
 		</ul>
 	</div>
